@@ -1,4 +1,4 @@
-# URL shortener
+`# TATLL is a URL shortener
 
 ## Introduction
 
@@ -59,10 +59,15 @@ CREATE TABLE IF NOT EXISTS links (
 [x] Start the rsync to the Apache root dir  
 
 > run as `sudo /bin/bcompare` 
+or
+> sudo chown -R $USER:$USER /var/www/your_domain
 
-[ ] Serve a test page  from prod  
-[ ] Serve cards from php
-[ ] Basic Database Configuration.  
+[x] Serve a test page  from prod  
+[x] Serve cards from php
+[x] Basic Database Configuration.  
+[ ] loading the homepage pings the dataconnection to get a count query of the db
+[ ] Make a html with put to db; every time home page loads a random url will be put to db
+[ ] Make a html with get from db; every time home page loads all the links retrieve and display from db
 [ ] Cards are the db.  Your second page shows the db as cards for now
 [ ] Imitate your 'world' stack on first run  
 [ ] First trivial test. Config phpunit.  
@@ -75,7 +80,10 @@ CREATE TABLE IF NOT EXISTS links (
 [ ] Write the Doctrine part  
 [ ] do something to the submission, like ALL CAPS it   
 [ ] 2nd route works   
+[ ] use bootstrap on the validation  
+>  https://getbootstrap.com/docs/5.0/forms/validation/
 [ ] once routeOne twig works, undo the html of main   
+[ ] flushing css to bottom https://stackoverflow.com/questions/10099422/flushing-footer-to-bottom-of-the-page-twitter-bootstrap 
 [ ] add UI more like https://free-url-shortener.rb.gy/ but with my twinning JS    
 [ ] accessible    
 [ ] remove unused USE statements    

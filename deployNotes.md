@@ -1,5 +1,33 @@
 # Deploy notes
 
+## file sync settings in Beyond Compare
+### folder ignore
+.git
+
+
+### file ignore
+*config* 
+.gitignore
+*xml*
+
+## Apache setup
+>  /etc/apache2/sites-available/your_domain.conf
+```bash
+<VirtualHost *:80>
+    ServerName your_domain
+    ServerAlias www.your_domain
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/your_domain
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
+`sudo a2ensite your_domain`  
+`sudo a2dissite 000-default`  
+`sudo apache2ctl configtest`  
+`sudo systemctl reload apache2`  
+
+
 ## db setup
 
 ### sessions
