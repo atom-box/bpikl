@@ -53,19 +53,31 @@ CREATE TABLE IF NOT EXISTS links (
 
 
 ## todo list
-[ ] Imitate your 'world' stack on first run  
+[x] Write the schema  
+[x] Make the Apache root directory  
+[x] Config file in dev and prod and .gitignore  
+[x] Start the rsync to the Apache root dir  
+
+> run as `sudo /bin/bcompare` 
+
+[ ] Serve a test page  from prod  
+[ ] Serve cards from php
 [ ] Basic Database Configuration.  
+[ ] Cards are the db.  Your second page shows the db as cards for now
+[ ] Imitate your 'world' stack on first run  
+[ ] First trivial test. Config phpunit.  
+[ ] When I press a button, GET request.  Returned has cardsdivs++, n
 [ ] leverage composer libraries    
 [ ] pressing button should append a stripe div, repeatedly on the success page  
 [ ] button on success page should say 'make another'   
-[ ] Add Validation
-[ ] Hook up the database
-[ ] Write the Doctrine part
+[ ] Add Validation  
+[ ] Hook up the database  
+[ ] Write the Doctrine part  
 [ ] do something to the submission, like ALL CAPS it   
 [ ] 2nd route works   
 [ ] once routeOne twig works, undo the html of main   
 [ ] add UI more like https://free-url-shortener.rb.gy/ but with my twinning JS    
 [ ] accessible    
 [ ] remove unused USE statements    
-[ ] config file 
+[ ] config file   
 [ ] Write at least three test cases in the tests/ folder. Run php bin/phpunit

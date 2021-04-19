@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>{% block title %}PIKL{% endblock %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <style type="text/css">
+    :root {
+      /* colors were in an image at https://creativexcorner.wordpress.com/2018/03/07/jean-michel-basquiat-one-of-the-last-natural-born-artists/ */
+      --vivid3: rgb(227, 191, 39);
+      --vivid1: rgb(29, 60, 171);
+      --vivid2: rgb(213, 90, 34);
+      --dark1: rgb(77, 23, 53);
+      --light1: rgb(197, 190, 170);
+      --light2: rgb(222, 223, 223);
+    }
+
+    body {
+      color: var(--dark1);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+      font-weight: 100;
+    }
+
+    form {
+      margin: auto 5rem;
+    }
+
+    .monde {
+      /*==f=i=l=l==s=c=r=e=e=n==================*/
+      background-color: var(--light2);
+      min-height: 100%;
+      width: auto;
+      /* Set up proportionate scaling */
+      width: 100%;
+      height: auto;
+      /* Set up positioning */
+      position: fixed;
+      /*==f=i=l=l==s=c=r=e=e=n==END============*/
+      display: flex;
+      /*(1)VERT*/
+      flex-direction: row;
+      /*(1)VERT*/
+      align-items: center;
+      /*(1)VERT*/
+      justify-content: center;
+      /*(2)HORIZ*/
+    }
+
+    .square-large {
+      border-radius: 3rem;
+      border: solid white 0.8rem;
+      height: 34rem;
+      margin: auto 4rem;
+      display: flex;
+      /*(1)VERT*/
+      flex-direction: column;
+      /*(1)VERT*/
+      align-items: center;
+      /*(1)VERT*/
+      justify-content: center;
+      /*(2)HORIZ*/
+    }
+
+    .square-small {
+      border-radius: 3rem;
+      border: solid var(--dark1) 0.8rem;
+      margin: auto 5rem;
+      height: 15rem;
+      min-width: 12rem;
+      display: flex;
+      /*(1)VERT*/
+      flex-direction: row;
+      /*(1)VERT*/
+      align-items: center;
+      /*(1)VERT*/
+      justify-content: center;
+      /*(2)HORIZ*/
+      text-align: center;
+    }
+
+    .core {
+      text-align: center;
+      margin: 1rem auto;
+      overflow-wrap: break-word;
+    }
+
+    .stripe {
+      height: 8rem;
+      width: 15rem;
+      background-color: var(--dark1);
+      border: solid white 0.1rem;
+      overflow: scroll;
+    }
+
+    /* IMAGE OF BRAND */
+    .brand {
+      position: absolute;
+      right: 2rem;
+      bottom: 2rem;
+      width: 12%;
+    }
+
+    .title {
+      font-size: 3rem;
+      padding: 0px 1px;
+      font-family: monospace;
+      text-shadow: 1px 1px 2px var(--dark1), 0 0 25px gray, 0 0 5px black;
+      color: var(--light2);
+      font-weight: 100;
+     }
+
+    .subtitle {
+      font-size: 2rem;
+    }
+
+    .todo {
+      background-color: black;
+      color: white;
+      border: 6px, dotted, yellow;
+    }
+
+  </style>
+
+{#
+SHOWS UP WITH
+<div>
+	<label for="form_longUrl" class="required">
+		Long url
+	</label>
+	<input type="text" id="form_longUrl" name="form[longUrl]" required="required" inputmode="url" value="Enter link here">
+</div>
+#}
+
+
+</head>
+
+<body>
+
+  <div class="monde">
+    <div class="square-large">
+        <h1 class="title">link-pikl</h1>
+<div class="square-small">
+  <!-- /*==============================*/ -->
+  {{form_start(form)}}
+<div>
+  <div class="core" type="textarea" name="str1" id='typeIn'>
+    {{form_row(form.rawUrl)}}
+  </div>
+  <div>
+	  {{form_row(form.save, {'attr': {'class': 'todo'}})}}
+	</div>
+</div>
+{{form_end(form)}}
+<!-- /*==============================*/ -->
+</div>
+
+
+    </div>
+    <img class="brand" src=" http://cdn.onlinewebfonts.com/svg/img_481082.svg">
+  </div>
+
+</body>
+
+</html>
