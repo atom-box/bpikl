@@ -1,4 +1,4 @@
-`# TATLL is a URL shortener
+# TATLL is a URL shortener
 
 ## Introduction
 
@@ -65,11 +65,11 @@ or
 [x] Serve a test page  from prod  
 [x] Serve cards from php
 [x] Basic Database Configuration.  
-[ ] loading the homepage pings the dataconnection to get a count query of the db
+[x] loading the homepage pings the dataconnection to get a count query of the db
 [ ] Make a html with put to db; every time home page loads a random url will be put to db
-[ ] Make a html with get from db; every time home page loads all the links retrieve and display from db
+[x] Make a html with get from db; every time home page loads all the links retrieve and display from db
 [ ] Cards are the db.  Your second page shows the db as cards for now
-[ ] Imitate your 'world' stack on first run  
+[x] Imitate your 'world' stack on first run  
 [ ] First trivial test. Config phpunit.  
 [ ] When I press a button, GET request.  Returned has cardsdivs++, n
 [ ] leverage composer libraries    

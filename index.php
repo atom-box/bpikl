@@ -50,17 +50,19 @@
 
         <?php
         // Load the form placeholder
-        require 'templates/bodyHome.php';
+        require 'templates/welcomeCard.php';
         ?>
 
         <?php
+        // Load the form placeholder
         require 'core/helpers/addToLinkages.php';
         ?>
 
 
+
         <?php
         // load the existing results
-        require 'templates/retrieveFromLinkages.php';
+        require 'templates/linkCards.php';
         ?>
 
 <!-- the opening tag for this is at  top -->

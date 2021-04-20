@@ -2,9 +2,6 @@
 
 require_once 'core/config/dbconfig.inc.php';
 
-// in browser, show errors if any
-// ini_set("display_errors", 1);
-// error_reporting(E_ALL);
 
 $user = USER;
 $password = SECRET;
@@ -21,19 +18,16 @@ try {
     <div class="card-body">
         <h4 class="card-title">
             <code>
-                timestamp here
+                timestamp ' . $row['date'] . '
             </code>
             <p class="card-text">
-                short url and link here
+                ' . $row['user_id'] . '
             </p>
             <p class="card-text">
                auto named from parsed URL here
             </p>
         </h4>
 ';
-    echo $row['date'];
-    echo $row['user_id'];
-    echo '<br>';
     echo '</div> </div>';
 
   }
