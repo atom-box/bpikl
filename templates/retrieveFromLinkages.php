@@ -15,15 +15,28 @@ $table = 'sessions';
 // echo "<p>________" .  $user, WRONGPASS . "__________</p>";
 
 try {
-  $db = new PDO("mysql:host=" . $host . ";dbname=" . $database, $user, $password);  // this is the only scary line in the entire file
-  echo "<h1>Report</h1>";
-  echo "<h2>orders</h2>"; 
+  $db = new PDO('mysql:host=' . $host . ';dbname=' . $database, $user, $password);  
   foreach($db->query("SELECT * FROM $table") as $row) {
-    print $row['date'];
-    print $row['user_id'];
-    echo "<br>";
+    echo '<div class="card border-primary mb-4" style="max-width: 55rem;">
+    <div class="card-body">
+        <h4 class="card-title">
+            <code>
+                timestamp here
+            </code>
+            <p class="card-text">
+                short url and link here
+            </p>
+            <p class="card-text">
+               auto named from parsed URL here
+            </p>
+        </h4>
+';
+    echo $row['date'];
+    echo $row['user_id'];
+    echo '<br>';
+    echo '</div> </div>';
+
   }
-  echo " done";
 } catch (PDOException $e) {
   print "Whoa, error!: " . $e->getMessage() . "<br/>";
 }
