@@ -9,7 +9,7 @@ class DBTransaction {
     public $last_insert_id;
 
     public function __construct(){
-        define('DB_NAME', 'sample_store');
+        define('DB_NAME', NAMEOFDATABASE);
         define('DB_USER', USER);
         define('DB_PASSWORD', SECRET);
         define('DB_HOST', 'localhost');
@@ -47,5 +47,3 @@ class DBTransaction {
         return true;
     }
 }
-
-// write to francis on the dM 

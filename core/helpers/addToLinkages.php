@@ -20,32 +20,29 @@ $table = 'sessions';
 
 $transaction = new dbTransaction();
 
-
 $sessionQuery = 'insert into sessions (user_id, date) values (:user_id, :date)';
 $sessionValues = 
 [
     'user_id'     => 999 ,
-    'date'        => gmstrftime('Y/m/d H:i:s'),
+    'date'        => date('Y-m-d H:i:s', time()),
+    // 'date'        => gmstrftime('Y/m/d H:i:s'),
 ];
 
+// $session_id = $transaction->last_insert_id;
 
-//  http://tinyurl/ls5bu83
-//  https://www.youtube.com/watch?v=Eiwi9brMMwI 
-
-$linkQuery = "insert into links (session_id, longurl, short) values (:session_id , :longurl , :short  )";
-$linkValues = 
-[
-    'longurl' =>  'https://jangkajawa.blogspot.com/2021/04/apa-itu-merbot.html',
-    'short' =>  'https://tinyurl.com/exp8s3n3',
-    'session_id' => $session_id,
-];
+// $linkQuery = "insert into links (session_id, longurl, short) values (:session_id , :longurl , :short  )";
+// $linkValues = 
+// [
+//     'longurl' =>  'https://jangkajawa.blogspot.com/2021/04/apa-itu-merbot.html',
+//     'short' =>  'https://tinyurl.com/exp8s3n3',
+//     'session_id' => $session_id,
+// ];
 
 // save the session, THEN ASK THE SQL WHICH SERIAL ID WAS IT?
 $transaction->insertQuery($sessionQuery, $sessionValues);
   
-$session_id = $transaction->last_insert_id;
 
-$transaction->insertQuery($linkQuery, $linkValues);
+// $transaction->insertQuery($linkQuery, $linkValues);
 //  now that you know that serial id, write the linkl
 
 $transaction->startTransaction();
@@ -58,3 +55,8 @@ $result = $transaction->submitTransaction();
   } else {
     echo "There was an error.";
 }
+
+
+
+//  http://tinyurl/ls5bu83
+//  https://www.youtube.com/watch?v=Eiwi9brMMwI 
