@@ -1,4 +1,3 @@
-<div class="container" style="margin-top:30px">
 
     <div class="card border-primary mb-4" style="max-width: 55rem;">
         <div class="card-body">
@@ -16,4 +15,3 @@
         </div>
     </div>
 
-</div>

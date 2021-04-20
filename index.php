@@ -17,23 +17,22 @@
     </title>
     <style>
         html,
-        body {
+        xbody {
             height: 100% !important;
         }
 
         #wrap {
-            min-height: 100% !important;
+            min-height: 80% !important;
         }
     </style>
 </head>
-<?php $user = 'Guest'; ?>
 <body>
-    <div id="wrap">
+    <div id="container-fluid wrap">
         <ul class="nav justify-content-end">
             <li class="nav-item">
                 <a class="nav-link" href="#">
                     User:
-                    <?php echo $guest ?> 
+                    <?php $user = 'Guest'; echo "mr. " . $guest . " junior"; ?> 
                 </a>
             </li>
             <li class="nav-item">
@@ -46,13 +45,12 @@
             <h1><code><span class="text-primary bg-dark"> tatll</span></code></h1>
             <p>A great URL shortener <i>with Bootstrap</i> for the <strong>CSS</strong>.</p>
         </div>
+<!-- the closing tag for this is at footer top -->
+<div class="container" style="margin-top:30px">
 
         <?php
+        // Load the form placeholder
         require 'templates/bodyHome.php';
-        ?>
-
-        <?php
-        require 'core/helpers/connectAndPingTheDB.php';
         ?>
 
         <?php
@@ -61,11 +59,13 @@
 
 
         <?php
+        // load the existing results
         require 'templates/retrieveFromLinkages.php';
         ?>
 
-
-        <footer class="jumbotron text-center" style="margin-bottom:0">
+<!-- the opening tag for this is at  top -->
+</div>
+        <footer class="footer text-center" style="margin-bottom:0">
             <p> Made by Evan at <a href="https://www.littlefurnace.com" title="Visit Little Furnace">Little Furnace</a></p>
         </footer>
 
