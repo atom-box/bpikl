@@ -93,6 +93,8 @@ or
 [ ] break up into classes a bit, views a bit
 [ ] scrape new links for their favicons
 [ ] add UI more like https://free-url-shortener.rb.gy/ but with my twinning JS    
-[ ] accessible    
+[ ] accessible 
+[ ] add a lower caser to the final phase 3 part   
 [ ] remove unused USE statements    
 [ ] Write at least three test cases in the tests/ folder. Run php bin/phpunit
+[ ] Look over the actual algorithm ideas at https://stackoverflow.com/questions/742013/how-do-i-create-a-url-shortener 
