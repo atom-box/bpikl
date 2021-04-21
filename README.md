@@ -64,28 +64,35 @@ or
 
 [x] Serve a test page  from prod  
 [x] Serve cards from php
+[x] config file   
+[x] Hook up the database  
 [x] Basic Database Configuration.  
 [x] loading the homepage pings the dataconnection to get a count query of the db
-[ ] Make a html with put to db; every time home page loads a random url will be put to db
+[x] flushing css to bottom. Did this by making a wrap div 100% height 
+[x] pressing button should append a stripe div, repeatedly on the success page  
+[x] Make a html with put to db; every time home page loads a random url will be put to db
 [x] Make a html with get from db; every time home page loads all the links retrieve and display from db
-[ ] Cards are the db.  Your second page shows the db as cards for now
 [x] Imitate your 'world' stack on first run  
+[x] fix NULL in session id in links
+[x] Imitate the CSS style of an admired page
+[ ] Make the shortener function
+[ ] Make the checker for avoiding collisions, like the robot names? 
+[ ] Formify everything on the first page
+
+[ ] Make second page
+[ ] Make the route work, the redirect
 [ ] First trivial test. Config phpunit.  
-[ ] When I press a button, GET request.  Returned has cardsdivs++, n
 [ ] leverage composer libraries    
-[ ] pressing button should append a stripe div, repeatedly on the success page  
 [ ] button on success page should say 'make another'   
-[ ] Add Validation  
-[ ] Hook up the database  
-[ ] Write the Doctrine part  
-[ ] do something to the submission, like ALL CAPS it   
-[ ] 2nd route works   
 [ ] use bootstrap on the validation  
+[ ] Add Validation  
+[ ] Sanitize inputs using 12-1 from d powers book
+[ ] 2nd route works 
+[ ] change echo, error, to logging.  Get a logger from composer. Add log path to config  
 >  https://getbootstrap.com/docs/5.0/forms/validation/
-[ ] once routeOne twig works, undo the html of main   
-[ ] flushing css to bottom https://stackoverflow.com/questions/10099422/flushing-footer-to-bottom-of-the-page-twitter-bootstrap 
+[ ] break up into classes a bit, views a bit
+[ ] scrape new links for their favicons
 [ ] add UI more like https://free-url-shortener.rb.gy/ but with my twinning JS    
 [ ] accessible    
 [ ] remove unused USE statements    
-[ ] config file   
 [ ] Write at least three test cases in the tests/ folder. Run php bin/phpunit

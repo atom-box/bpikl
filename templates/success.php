@@ -50,19 +50,12 @@
 
         <?php
         // Load the form placeholder
-        require 'templates/welcomeCard.php';
+        require './successCard.php';
         ?>
-
-        <?php
-        // Load the form placeholder
-        // require 'core/helpers/addToLinkages.php';
-        ?>
-
-
 
         <?php
         // load the existing results
-        // require 'templates/linkCards.php';
+        require './linkCards.php';
         ?>
 
 <!-- the opening tag for this is at  top -->

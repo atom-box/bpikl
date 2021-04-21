@@ -27,10 +27,22 @@ $randomString = '';
 for ($i = 0; $i < 6; $i++) { 
     $randomString .= $A_z[random_int(0, 63)]; 
 }
-$session_id = $transaction->last_insert_id;
 $longurl    =  'https://jangkajawa.blogspot.com/2021/04/apa-itu-merbot.html';
 $short      =  'https://tinyurl.com/' . $randomString;
+// $session_id = 4323432; // proves that the var gets beyond here
+//todo
 
+
+
+// save the session, THEN ASK THE SQL WHICH SERIAL ID WAS IT?
+$transaction->insertQuery($sessionQuery, $sessionValues);
+
+$session_id = $transaction->last_insert_id;
+if (!$session_id) {
+    echo "oooooooooooooooooooooooooooooooo nnnnnnnnnnnnnnnnnnnnooooo";
+    var_dump($transaction);
+    die;
+}
 $linkQuery = "insert into links (session_id, longurl, short) values (:session_id , :longurl , :short  )";
 $linkValues = 
 [
@@ -38,10 +50,6 @@ $linkValues =
     'short' =>  $short,
     'session_id' => $session_id,
 ];
-
-// save the session, THEN ASK THE SQL WHICH SERIAL ID WAS IT?
-$transaction->insertQuery($sessionQuery, $sessionValues);
-  
 
 $transaction->insertQuery($linkQuery, $linkValues);
 //  now that you know that serial id, write the linkl

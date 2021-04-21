@@ -6,7 +6,6 @@
 
 
 ### file ignore
-*config* 
 .gitignore
 *xml*
 
