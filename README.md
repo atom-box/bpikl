@@ -2,7 +2,7 @@
 
 ## Introduction
 
-A PHP OOP web app to for shortening links.  If given a long URL, the site generates a shortened URL, stores it in a table, and becomes a redirecter for the new shortened URL.
+This is a web app for shortening links.  If given a long URL, the site generates a shortened URL, stores it in a table, and becomes a redirecter for the new shortened URL.
 
 ## Schema
 
@@ -75,17 +75,18 @@ or
 [x] Imitate your 'world' stack on first run  
 [x] fix NULL in session id in links
 [x] Imitate the CSS style of an admired page
-[ ] Ugh, whole-project pause: reorganize code to 1 class, 3 controllers, two main templates. Make sure still works.
-[ ] Make the shortener function
+[x] Ugh, whole-project pause: reorganize code to 1 class, 3 controllers, two main templates. Make sure still works.
+[x] Make the shortener function
+[ ] Pass in the long URL
 [ ] Make the checker for avoiding collisions, like the robot names? 
 [x] Formify everything on the first page
 
-[ ] Make second page
+[x] Make second page
 [ ] Make the route work, the redirect
-[ ] First trivial test. Config phpunit.  
-[ ] leverage composer libraries    
-[ ] button on success page should say 'make another'   
 [ ] use bootstrap on the validation  
+[ ] leverage composer libraries  (for sanitizing??)  
+[ ] First trivial test. Config phpunit.  
+[ ] button on success page should say 'make another'   
 [ ] Add Validation  
 [ ] Sanitize inputs using 12-1 from d powers book
 [ ] 2nd route works 
@@ -97,7 +98,11 @@ or
 [ ] accessible 
 [ ] add a lower caser to the final phase 3 part   
 [ ] remove unused USE statements    
+[ ] call logging in core/helpers/addToLinkages.php
 [ ] Write at least three test cases in the tests/ folder. Run php bin/phpunit
+[ ] Add a parser option to put the originals URL in as a dubdomain.
+[ ] Composer package to avoid obscenity?
 [ ] Lint: todos.  Error printers.  Commented out code.
+[ ] Add captcha?
 [ ] Lint: core/helpers/addLinkToDb.php and other helpers, are hacky
 [ ] Look over the actual algorithm ideas at https://stackoverflow.com/questions/742013/how-do-i-create-a-url-shortener 

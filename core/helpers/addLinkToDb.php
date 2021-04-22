@@ -3,7 +3,7 @@
 // in browser, show errors if any
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
-
+ 
 require_once ('./core/helpers/dbTransaction.php');
 require_once('./core/config/dbconfig.inc.php');
 require_once('./core/classes/WebAddress.php');  
@@ -54,12 +54,12 @@ $transaction->startTransaction();
 $result = $transaction->submitTransaction();
 
 
-  //   all good?
-  if ($result) {
-    echo "Records successfully submitted";
-  } else {
-    echo "There was an error.";
-}
+  //   all good?   ENABLE A LOGGER to consume THIS MESSAGE
+//   if ($result) {
+//     echo "Records successfully submitted";
+//   } else {
+//     echo "There was an error.";
+// }
 
 
 
