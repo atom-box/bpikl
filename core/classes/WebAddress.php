@@ -1,20 +1,31 @@
 <?php
 
 interface stringulator {
-    public function shortify(): string;
+    public function shortify(): void;
 }
+
 
 class WebAddress implements stringulator {
     public $short;
-    public $longurl;
+    public $long;
     
-    public function __construct(string $longurl) {
-        $this->longurl = $longurl;
+    public function __construct(string $long, $short = '') {
+        $this->long = $long;
+        $this->short = $short;
     }
 
-    public function shortify(): string {
-        $this->short = 'strawberry';
+    public function getLong(): string{
+        return $this->long;
+    }
+    
+    public function getShort(): string{
         return $this->short;
+    }
+    
+
+    public function shortify(): void {
+        // TODO  SOME KIND OF LOGIC HERE
+        $this->short = 'strawberry';
     }
 
 

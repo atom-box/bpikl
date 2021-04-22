@@ -1,5 +1,7 @@
 <?php
     require './templates/top.php';
+    // in browser, show errors if any
+
 ?> 
 
 <div class="container" style="margin-top:30px">

@@ -31,7 +31,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="index.php">
                     User:
-                    <?php $user = 'Guest'; echo "mr. " . $guest . " junior"; ?> 
+                    <?php $user = 'Guest'; echo "mr. " . $user . " junior"; ?> 
                 </a>
             </li>
             <li class="nav-item">

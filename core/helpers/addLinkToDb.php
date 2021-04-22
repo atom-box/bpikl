@@ -1,13 +1,19 @@
 <?php
+// todo: very kludge
 // in browser, show errors if any
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
 
-require_once ('./core/helpers/dbTransaction.php');  // crasher
-require_once('./core/config/dbconfig.inc.php');  // crasher
-require_once('./core/helpers/shortify.php');  
+require_once ('./core/helpers/dbTransaction.php');
+require_once('./core/config/dbconfig.inc.php');
+require_once('./core/classes/WebAddress.php');  
 
-// don't hit this code until after clicking submit form
+$address = new WebAddress('faaaaaaaaaaaaaaaaaaaaaaaaaa');
+$longurl    = $address->getLong();
+$address->shortify();
+$short      = $address->getShort();
+
+
 $user = USER;
 $password = SECRET;
 $database = NAMEOFDATABASE;  
@@ -22,12 +28,6 @@ $sessionValues =
     'user_id'     => 999 ,
     'date'        => date('Y-m-d H:i:s', time()),
 ];
-
-$longurl    =  'https://jangkajawa.blogspot.com/2021/04/apa-itu-merbot.html';
-$short      =  'https://tinyurl.com/' . $randomString;
-// $session_id = 4323432; // proves that the var gets beyond here
-//todo
-
 
 
 // save the session, THEN ASK THE SQL WHICH SERIAL ID WAS IT?
