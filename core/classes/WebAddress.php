@@ -25,7 +25,7 @@ class WebAddress implements stringulator {
 
     public function shortify(): void {
         // TODO  SOME KIND OF LOGIC HERE
-        $this->short = 'strawberry';
+        $this->short = random_int(10000, 99999); // todo
     }
 
 
