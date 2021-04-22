@@ -106,3 +106,5 @@ or
 [ ] Add captcha?
 [ ] Lint: core/helpers/addLinkToDb.php and other helpers, are hacky
 [ ] Look over the actual algorithm ideas at https://stackoverflow.com/questions/742013/how-do-i-create-a-url-shortener 
+[ ] David Powers 11-6,
+[ ] rightclick format document on everything or run phpcs at BASh 

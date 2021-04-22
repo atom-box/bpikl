@@ -8,7 +8,7 @@ require_once ('./core/helpers/dbTransaction.php');
 require_once('./core/config/dbconfig.inc.php');
 require_once('./core/classes/WebAddress.php');  
 
-$address = new WebAddress('faaaaaaaaaaaaaaaaaaaaaaaaaa');
+$address = new WebAddress( $_POST['longurl']);
 $longurl    = $address->getLong();
 $address->shortify();
 $short      = $address->getShort();
