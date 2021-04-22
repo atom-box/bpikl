@@ -29,7 +29,7 @@
     <div id="container-fluid wrap">
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="index.php">
                     User:
                     <?php $user = 'Guest'; echo "mr. " . $guest . " junior"; ?> 
                 </a>
@@ -43,6 +43,5 @@
         <div class="jumbotron  text-center">
             <h1><code><span class="text-primary bg-dark"><a href="index.php">tatll</a> </span></code></h1>
             <p>A free tool to turn <i>long URLs</i> into short links <strong>in seconds</strong>.</p>
-            <h3>make this clickable</h3>
         </div>
 <!-- the closing tag for this is at footer top -->

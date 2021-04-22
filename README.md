@@ -75,9 +75,10 @@ or
 [x] Imitate your 'world' stack on first run  
 [x] fix NULL in session id in links
 [x] Imitate the CSS style of an admired page
+[ ] Ugh, whole-project pause: reorganize code to 1 class, 3 controllers, two main templates. Make sure still works.
 [ ] Make the shortener function
 [ ] Make the checker for avoiding collisions, like the robot names? 
-[ ] Formify everything on the first page
+[x] Formify everything on the first page
 
 [ ] Make second page
 [ ] Make the route work, the redirect

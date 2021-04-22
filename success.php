@@ -1,6 +1,6 @@
 <?php
 // Load the form placeholder
-require './top.php';
+require './templates/top.php';
 ?>
 
 
@@ -8,7 +8,7 @@ require './top.php';
 
     <?php
     // Load the form placeholder
-    require './successCard.php';
+    require './templates/successCard.php';
     ?>
 
     <?php
@@ -23,6 +23,6 @@ require './top.php';
 
 <?php
 // Load the form placeholder
-require './bottom.php';
+require './templates/bottom.php';
 ?>
 
