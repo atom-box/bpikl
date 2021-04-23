@@ -10,7 +10,9 @@ require_once('./core/classes/WebAddress.php');
 
 $address = new WebAddress( $_POST['longurl']);
 $longurl    = $address->getLong();
-$address->shortify();
+do {
+  $address->shortify();
+} while ($address->notUnique());
 $short      = $address->getShort();
 
 

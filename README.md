@@ -72,20 +72,20 @@ or
 [x] pressing button should append a stripe div, repeatedly on the success page  
 [x] Make a html with put to db; every time home page loads a random url will be put to db
 [x] Make a html with get from db; every time home page loads all the links retrieve and display from db
-[x] Imitate your 'world' stack on first run  
+[x] Imitate a short, existing stack of yours on first run ('Worlds smallest LAMP')  
 [x] fix NULL in session id in links
 [x] Imitate the CSS style of an admired page
 [x] Ugh, whole-project pause: reorganize code to 1 class, 3 controllers, two main templates. Make sure still works.
 [x] Make the shortener function
-[ ] Pass in the long URL
-[ ] Make the checker for avoiding collisions, like the robot names? 
+[x] Pass in the long URL from form to page 2
+[ ] First trivial test. Config phpunit.  
+[ ] Make the checker for avoiding collisions, like the robot names? Use prepared statements per link below.
 [x] Formify everything on the first page
 
 [x] Make second page
 [ ] Make the route work, the redirect
 [ ] use bootstrap on the validation  
 [ ] leverage composer libraries  (for sanitizing??)  
-[ ] First trivial test. Config phpunit.  
 [ ] button on success page should say 'make another'   
 [ ] Add Validation  
 [ ] Sanitize inputs using 12-1 from d powers book
@@ -108,3 +108,7 @@ or
 [ ] Look over the actual algorithm ideas at https://stackoverflow.com/questions/742013/how-do-i-create-a-url-shortener 
 [ ] David Powers 11-6,
 [ ] rightclick format document on everything or run phpcs at BASh 
+
+## Resources
+
+[https://www.php.net/manual/en/pdo.prepare.php](PDO examples for calling the db)

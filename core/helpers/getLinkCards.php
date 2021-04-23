@@ -10,12 +10,17 @@ $table = 'sessions';
 
 try {
   $db = new PDO('mysql:host=' . $host . ';dbname=' . $database, $user, $password);  
-  foreach($db->query(
-    "select date, longurl, short 
-    from links as l 
-    join sessions as s 
-    on l.session_id = s.session_id"
-  ) as $row) {
+  $pdoObject = $db->query("
+    select date, longurl, short 
+      from links as l 
+      join sessions as s 
+      on l.session_id = s.session_id
+  ");
+  $ascending = $pdoObject->fetchAll();
+
+  // var_dump($ascending); die;
+  $descending = array_reverse($ascending);
+  foreach($descending as $row) {
     echo '<div class="card border-primary mb-4" style="max-width: 55rem;">
     <div class="card-body">
         <h4 class="card-title">
