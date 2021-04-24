@@ -13,7 +13,7 @@ class LongUrlTest extends TestCase
 
 
     public function testMakesALink() {
-        $testurl = 'https://example.com/' 
+        $testurl = 'https://tat.us/' 
         . '/' . (string) random_int(100000, 999999)
         . '/' . (string) random_int(100000, 999999);
         $wA = new WebAddress($testurl);
@@ -21,4 +21,25 @@ class LongUrlTest extends TestCase
         $wA->shortify();
         $this->assertLessThan(25, strlen($wA->getShort()));
     }
+
+    public function testForLinkCollisions(){
+        
+        $repetitions = 10000;
+        $i = $repetitions;
+        $shorties = []; 
+        $testUrl = '';
+        while ($i > 0){
+            $testUrl = 'https://tat.us/' 
+            . '/' . (string) random_int(100000, 999999)
+            . '/' . (string) random_int(100000, 999999);
+            $wA = new WebAddress($testUrl);
+            $wA->shortify();
+            $shortUrl = $wA->getShort();
+            $shorties[] = $shortUrl;
+            $stoppedAt = 'Stopped at ' . $i. ' and last testUrl was ' . $testUrl;
+            echo "testurl: " . $shortUrl . "one of the shorties: " . $shorties[0] . "\n";
+            $this->assertNotContains($testUrl , $shorties, $stoppedAt);
+            $i--;
+        }
+    } 
 }

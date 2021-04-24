@@ -108,7 +108,7 @@ or
 [ ] Look over the actual algorithm ideas at https://stackoverflow.com/questions/742013/how-do-i-create-a-url-shortener 
 [ ] David Powers 11-6,
 [ ] rightclick format document on everything or run phpcs at BASh 
-[ ] refactor require/use/namespace everywhere, especially in tests
+[ ] refactor require/use/namespace everywhere, especially in tests.  If desperate can try to use global namespace option onn some things per https://blog.eduonix.com/web-programming-tutorials/namespaces-in-php/  
 
 ## Resources
 
