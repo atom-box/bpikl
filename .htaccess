@@ -1,0 +1,9 @@
+RewriteEngine on
+# LogLevel alert rewrite:trace3
+# RewriteCond ^bat...$
+# RewriteRule templates/welcomeCard.php [NC]
+RewriteRule ^bat[a-z][a-z][a-z]$  templates/welcomeCard.php 
+# code can be missing; works
+RewriteRule ^tast..$ templates/successCard.php [NC]
+RewriteRule ^garg$         https://github.com/shobhit-garg/shobhit-garg.github.io 
+RewriteRule ^dirt$   http://geekdirt.com/blog/url_rewriting_in_apache_mod_rewrite/ 
