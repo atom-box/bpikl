@@ -78,8 +78,8 @@ or
 [x] Ugh, whole-project pause: reorganize code to 1 class, 3 controllers, two main templates. Make sure still works.
 [x] Make the shortener function
 [x] Pass in the long URL from form to page 2
-[ ] First trivial test. Config phpunit.  
-[ ] Make the checker for avoiding collisions, like the robot names? Use prepared statements per link below.
+[x] First trivial test. Config phpunit.  
+[x] Make the checker for avoiding collisions, like the robot names? Use prepared statements per link below.
 [x] Formify everything on the first page
 
 [x] Make second page
@@ -109,6 +109,7 @@ or
 [ ] David Powers 11-6,
 [ ] rightclick format document on everything or run phpcs at BASh 
 [ ] refactor require/use/namespace everywhere, especially in tests.  If desperate can try to use global namespace option onn some things per https://blog.eduonix.com/web-programming-tutorials/namespaces-in-php/  
+[ ] could add a number of times clicked
 
 ## Resources
 
