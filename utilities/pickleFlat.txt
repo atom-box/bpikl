@@ -1,0 +1,34 @@
+##
+## productmap.txt - Product to ID map file
+##
+
+01 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+02 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+03 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+04 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+05 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+06 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+07 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+08 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+09 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+10 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+11 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+12 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+13 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+14 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+15 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+16 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+17 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+18 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+19 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+20 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+21 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+22 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+23 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+24 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+25 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+26 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+27 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+28 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+29 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64
+30 https://dev.to/mizadmehr/missed-frontend-vulnerabilities-1-css-is-not-as-safe-as-you-think-3l64

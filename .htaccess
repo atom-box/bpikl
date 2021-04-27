@@ -1,9 +1,26 @@
 RewriteEngine on
 # LogLevel alert rewrite:trace3
 # RewriteCond ^bat...$
+# FLAG L  - last
+# FLAG NC - NO CASE, ignore case
 # RewriteRule templates/welcomeCard.php [NC]
-RewriteRule ^bat[a-z][a-z][a-z]$  templates/welcomeCard.php 
 # code can be missing; works
+
+# Fails.  Dunno why. The R=301 causes it.
+# RewriteRule . templates/404.php [L,R=301]
+
+RewriteRule ^bat[a-z][a-z][a-z]$  templates/welcomeCard.php 
 RewriteRule ^tast..$ templates/successCard.php [NC]
 RewriteRule ^garg$         https://github.com/shobhit-garg/shobhit-garg.github.io 
 RewriteRule ^dirt$   http://geekdirt.com/blog/url_rewriting_in_apache_mod_rewrite/ 
+RewriteRule ^.*test.html$ test.php [L]
+# RewriteRule ^/?([a-zA-Z_]+)/([a-zA-Z_]+)/([a-zA-Z_]+)$ display.php?country=$1&state=$2&city=$3 [L]
+
+
+# For all requests where files and folders do not exist
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . templates/404.php [L]
+
+# RewriteMap pickleFlat "txt:utilities/pickleFlat.txt"
+# RewriteRule "^.*[0-9][0-9]$" "${pickleFlat:$1}"
