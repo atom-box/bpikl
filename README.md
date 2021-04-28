@@ -43,11 +43,11 @@ CREATE TABLE IF NOT EXISTS links (
 
 |               Section              | 1<br>Basics | 2<br>Works   | 3<br>Polished     | 4<br>Linted |
 |:-------------------------------- |:-----------------:|:-------------:|:-------------:|:----------------:|
-|**three pages of html**    |      |  |   |
+|**three pages of html**    |   ![done][done]     |  |   |
 |**schema**           |  ![done][done]        |    |  |                                  |
-|**doctrine**           |       |  |  |                                  |
-|**tests**    |     |  |   |                        |
-|**write shortener logic (5 - 9 alphanumeric)**   |      |               |               |                                  |
+|**SQL**           |   ![done][done]      |  ![done][done]  |  |                                  |
+|**tests**    |   ![done][done]    |  |   |                        |
+|**write shortener logic (5 - 9 alphanumeric)**   |    ![done][done]    |    ![done][done]             |               |                                  |
 |**Session management**         |                   |               |               |                                  |
 |**CSS**         |![done][done]   |               |               |                                  |
 
@@ -90,6 +90,7 @@ or
 [ ] Add Validation  
 [ ] Sanitize inputs using 12-1 from d powers book
 [ ] 2nd route works 
+[ ] implement DBM with Apache.  DB writes to .htaccess 
 [ ] change echo, error, to logging.  Get a logger from composer. Add log path to config  
 >  https://getbootstrap.com/docs/5.0/forms/validation/
 [ ] break up into classes a bit, views a bit
