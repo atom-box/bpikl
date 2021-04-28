@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS links (
 |               Section              | 1<br>Basics | 2<br>Works   | 3<br>Polished     | 4<br>Linted |
 |:-------------------------------- |:-----------------:|:-------------:|:-------------:|:----------------:|
 |**three pages of html**    |   ![done][done]     |  |   |
-|**schema**           |  ![done][done]        |    |  |                                  |
+|**schema**           |  ![done][done]        |   ![done][done]   |  |                                  |
 |**SQL**           |   ![done][done]      |  ![done][done]  |  |                                  |
 |**tests**    |   ![done][done]    |  |   |                        |
 |**write shortener logic (5 - 9 alphanumeric)**   |    ![done][done]    |    ![done][done]             |               |                                  |
@@ -111,6 +111,45 @@ or
 [ ] rightclick format document on everything or run phpcs at BASh 
 [ ] refactor require/use/namespace everywhere, especially in tests.  If desperate can try to use global namespace option onn some things per https://blog.eduonix.com/web-programming-tutorials/namespaces-in-php/  
 [ ] could add a number of times clicked
+
+## Debugging Apache: text file version  
+
+
+__/etc/apache2/apache2.conf__
+```
+#...
+Nothing added here at all. Not even 'RewriteEngine on'
+```
+
+__/etc/apache2/sites-enabled/tatll.org.conf__  
+Note: Must set up reference map outside of the directory block. Okay to say 'rewriterule' inside of block though! 
+```
+ 1 <VirtualHost *:80>
+ 2     ServerName tatll.org
+ 3     ServerAlias www.tatll.org
+ 4     ServerAdmin webmaster@localhost
+ 5     DocumentRoot /var/www/tatll.org
+ 6     ErrorLog ${APACHE_LOG_DIR}/error.log
+ 7     CustomLog ${APACHE_LOG_DIR}/access.log combined
+ 8     RewriteEngine on
+ 9     RewriteMap pickleFlat txt:/var/www/tatll.org/utilities/pickleFlat.txt
+10
+11     <Directory /var/www/tatll.org>
+12         Options Indexes FollowSymLinks
+13         AllowOverride All
+14         Require all granted
+15         RewriteRule (\w{6}\d{2})$ ${pickleFlat:$1}
+16     </Directory>
+17 </VirtualHost>
+18
+```
+
+__/var/www/tatll.org/utilities/pickleFlat.txt__
+```
+abcdef12 https://example.com
+```
+
+
 
 ## Resources
 
