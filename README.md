@@ -132,13 +132,24 @@ Note: Must set up reference map outside of the directory block. Okay to say 'rew
  6     ErrorLog ${APACHE_LOG_DIR}/error.log
  7     CustomLog ${APACHE_LOG_DIR}/access.log combined
  8     RewriteEngine on
- 9     RewriteMap pickleFlat txt:/var/www/tatll.org/utilities/pickleFlat.txt
+ 9     RewriteMap pickleFlat txt:15 
+16         # For all requests where files and folders do not exist
+17         RewriteCond %{REQUEST_FILENAME} !-d
+18         RewriteCond %{REQUEST_FILENAME} !-f
+19         RewriteRule . templates/404.php [L]
+/var/www/tatll.org/utilities/pickleFlat.txt
 10
 11     <Directory /var/www/tatll.org>
 12         Options Indexes FollowSymLinks
 13         AllowOverride All
 14         Require all granted
 15         RewriteRule (\w{6}\d{2})$ ${pickleFlat:$1}
+15 
+16         # For all requests where files and folders do not exist
+17         RewriteCond %{REQUEST_FILENAME} !-d
+18         RewriteCond %{REQUEST_FILENAME} !-f
+19         RewriteRule . templates/404.php [L]
+
 16     </Directory>
 17 </VirtualHost>
 18

@@ -1,7 +1,5 @@
 <?php
-require './core/helpers/addLinkToDb.php';
-require './core/helpers/getLinkCards.php';
-
-// todo whos your hero
-// brian lehrer
-// QuincyLarson
+require_once
+ './core/helpers/addLinkToDb.php';
+require_once './core/helpers/addLinkToRouterFile.php';
+require_once './core/helpers/getLinkCards.php';
