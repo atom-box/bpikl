@@ -3,7 +3,7 @@
 require_once 'core/config/dbconfig.inc.php';
 
 
-interface stringulator
+interface stringulator  // todo interface not needed on small app
 {
     public function shortify(): void;
 }

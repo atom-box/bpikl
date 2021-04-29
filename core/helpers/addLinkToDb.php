@@ -37,7 +37,7 @@ $transaction->insertQuery($sessionQuery, $sessionValues);
 
 $session_id = $transaction->last_insert_id;
 if (!$session_id) {
-    echo "oooooooooooooooooooooooooooooooo nnnnnnnnnnnnnnnnnnnnooooo";
+    echo "todo todo todo";
     var_dump($transaction);
     die;
 }
