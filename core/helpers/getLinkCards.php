@@ -6,7 +6,7 @@ $user = USER;
 $password = SECRET;
 $database = NAMEOFDATABASE;  
 $host = 'localhost';
-$table = 'sessions';
+$table = 'sessions';  // todo NOT USED?
 
 try {
   $db = new PDO('mysql:host=' . $host . ';dbname=' . $database, $user, $password);  

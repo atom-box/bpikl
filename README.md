@@ -136,10 +136,16 @@ or
 [x] Make the checker for avoiding collisions, like the robot    names? Use prepared statements per link below.   
 [x] Formify everything on the first page   
 
-[x] Make second page
-[ ] Make the route work, the redirect
+[x] Make second page   
+[x] ~~Configure apache to use a SQL table to do redirect~~    
+[x] Configure apache to use a rewrite table TEXTFILE to do redirect     
+[ ] Make a wrapper class around the dbTransaction for get/set the sql
+[ ] Make newlines append to the flat file used by Apache redirect
+[ ] re-Enable --->public function notUnique()
 [ ] use bootstrap on the validation  
-[ ] leverage composer libraries  (for sanitizing??)  
+[ ] leverage composer libraries  (for sanitizing??)    
+[ ] Write tests for addLinkToDbTest.php
+
 [ ] button on success page should say 'make another'   
 [ ] Add Validation  
 [ ] Sanitize inputs using 12-1 from d powers book
@@ -154,20 +160,20 @@ or
 [ ] accessible 
 [ ] add a lower caser to the final phase 3 part   
 [ ] remove unused USE statements    
-[ ] call logging in core/helpers/addToLinkages.php
-[ ] Write at least three test cases in the tests/ folder. Run php bin/phpunit
-[ ] Add a parser option to put the originals URL in as a dubdomain.
-[ ] Composer package to avoid obscenity?
-[ ] Lint: todos.  Error printers.  Commented out code.
-[ ] Add captcha?
-[ ] Lint: core/helpers/addLinkToDb.php and other helpers, are hacky
-[ ] Look over the actual algorithm ideas at https://stackoverflow.com/questions/742013/how-do-i-create-a-url-shortener 
-[ ] David Powers 11-6,
-[ ] rightclick format document on everything or run phpcs at BASh 
-[ ] refactor require/use/namespace everywhere, especially in tests.  If desperate can try to use global namespace option onn some things per https://blog.eduonix.com/web-programming-tutorials/namespaces-in-php/  
-[ ] could add a number of times clicked
+[ ] call logging in core/helpers/addToLinkages.php    
+[ ] Write at least three test cases in the tests/ folder.     Run php bin/phpunit    
+[ ] Add a parser option to put the originals URL in as a     dubdomain.    
+[ ] Composer package to avoid obscenity?    
+[ ] Lint: todos.  Error printers.  Commented out code.    
+[ ] Add captcha?    
+[ ] Lint: core/helpers/addLinkToDb.php and other helpers,     are hacky    
+[ ] Look over the actual algorithm ideas at https://    stackoverflow.com/questions/742013/    how-do-i-create-a-url-shortener     
+[ ] David Powers 11-6,    
+[ ] rightclick format document on everything or run phpcs at     BASh     
+[ ] refactor require/use/namespace everywhere, especially in     tests.  If desperate can try to use global namespace option     onn some things per https://blog.eduonix.com/    web-programming-tutorials/namespaces-in-php/      
+[ ] could add a number of times clicked    
    
-   
+
 
 ## Resources
 

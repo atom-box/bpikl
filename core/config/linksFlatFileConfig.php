@@ -1,13 +1,6 @@
-<php 
-// DON'T COMMIT
-// DON'T COMMIT
-// DON'T COMMIT
+<?php 
+// do sync;    DON'T COMMIT
+// do sync;    DON'T COMMIT
+// do sync;    DON'T COMMIT
 
-// todo
-// move filename to here
-// todo
-// move filename to here
-// todo
-// move filename to here
-// todo
-// move filename to here
+const APACHE_FLATFILE = '/home/evan/projects/do-not-commit/shortener.txt';

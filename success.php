@@ -22,11 +22,6 @@
     require './core/controllers/successController.php';
     ?>
 
-    <?php
-    // load the existing results
-    // require './linkCards.php';
-    ?>
-
 <?php
 // Load the form placeholder
 require './templates/bottom.php';

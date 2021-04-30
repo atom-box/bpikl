@@ -24,13 +24,13 @@ class DBTransaction {
         $this->pdo->beginTransaction();
     }
     
-    public function insertQuery(string $sql, array $data)
+    public function insertQuery(string $sql, array $data): int
     {
         $stmt = $this->pdo->prepare($sql);
         
         $stmt->execute($data);
 
-        $this->last_insert_id = $this->pdo->lastInsertId();
+        return $this->pdo->lastInsertId();
     }
 
     public function submitTransaction()

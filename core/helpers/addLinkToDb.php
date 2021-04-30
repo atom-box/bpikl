@@ -1,12 +1,17 @@
 <?php
-// todo: very kludge
-// in browser, show errors if any
+// in browser, show errors if any TODO TODO
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
  
 require_once ('./core/helpers/dbTransaction.php');
 require_once('./core/config/dbconfig.inc.php');
-require_once('./core/classes/WebAddress.php');  
+require_once('./core/classes/WebAddress.php'); 
+require_once('./core/classes/Writer.php'); 
+require_once 'core/config/linksFlatFileConfig.php';
+
+/*
+Adds new url info to two places: DB and FLATFILE-for-Apache
+*/
 
 $address = new WebAddress( $_POST['longurl']);
 $longurl    = $address->getLong();
@@ -15,15 +20,16 @@ do {
 } while ($address->notUnique());
 $short      = $address->getShort();
 
+// FILEWRITING: write short, long to flat file
+// this file will be the redirect map for Apache
+$handle = new Writer(APACHE_FLATFILE);
+$line = $short . ' ' . $longurl . PHP_EOL;
+$fileWriteSuccess = $handle->appendLine($line);
+// echo $line . ' ===> ' . $fileWriteSuccess . PHP_EOL; die;
+// todo if false is returned, handle it
 
-$user = USER;
-$password = SECRET;
-$database = NAMEOFDATABASE;  
-$host = 'localhost';
-$table = 'sessions';
-
-$transaction = new dbTransaction();
-
+// QUERY 1: sessions table
+$transaction = new DBTransaction();
 $sessionQuery = 'insert into sessions (user_id, date) values (:user_id, :date)';
 $sessionValues = 
 [
@@ -31,16 +37,17 @@ $sessionValues =
     'date'        => date('Y-m-d H:i:s', time()),
 ];
 
-
 // save the session, THEN ASK THE SQL WHICH SERIAL ID WAS IT?
+// (this works because last_id is the serialized sql column)
 $transaction->insertQuery($sessionQuery, $sessionValues);
-
 $session_id = $transaction->last_insert_id;
 if (!$session_id) {
     echo "todo todo todo";
     var_dump($transaction);
     die;
 }
+
+//    QUERY 2: links table
 $linkQuery = "insert into links (session_id, longurl, short) values (:session_id , :longurl , :short  )";
 $linkValues = 
 [
@@ -49,21 +56,14 @@ $linkValues =
     'session_id' => $session_id,
 ];
 
-$transaction->insertQuery($linkQuery, $linkValues);
 //  now that you know that serial id, write the linkl
-
+$link_id = $transaction->insertQuery($linkQuery, $linkValues);
 $transaction->startTransaction();
 $result = $transaction->submitTransaction();
 
-
-  //   all good?   ENABLE A LOGGER to consume THIS MESSAGE
+//   all good?   ENABLE A LOGGER to consume THIS MESSAGE
 //   if ($result) {
 //     echo "Records successfully submitted";
 //   } else {
 //     echo "There was an error.";
 // }
-
-
-
-//  http://tinyurl/ls5bu83
-//  https://www.youtube.com/watch?v=Eiwi9brMMwI 

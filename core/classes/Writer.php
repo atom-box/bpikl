@@ -13,8 +13,8 @@ class Writer {
     }
 
     public function appendLine(string $line): int {
-        $person = date('Y-m-d H:i:s', time()) . " line from phpunit test\n";
-        $successFlag = file_put_contents($this->file, $person, FILE_APPEND | FILE_USE_INCLUDE_PATH | LOCK_EX);
+        $successFlag = file_put_contents($this->file, $line, FILE_APPEND | FILE_USE_INCLUDE_PATH | LOCK_EX);
+        // todo    echo('writer class says it wrote to here::::: ' . $this->file . PHP_EOL);
         return $successFlag;
     }
 

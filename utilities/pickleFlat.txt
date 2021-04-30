@@ -1,8 +1,5 @@
 ##
-## productmap.txt - Product to ID map file
-##
-# main templates/test.php
-# /main success.php
+## /home/evan/projects/do-not-commit/shortener.txt
 
 aaaaaa11 /templates/test.php
 aaaaaa22 /success.php
