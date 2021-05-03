@@ -41,7 +41,15 @@
             </li>
         </ul>
         <div class="jumbotron  text-center">
-            <h1><code><span class="text-primary bg-dark"><a href="index.php">tatll</a> </span></code></h1>
+            
+            <h1><code><span class="text-primary bg-dark">
+                <!--  COME BACK AND STYLE LATER
+                    <img src="public/images/tatll-flow-picker.svg" style="height: 10rem;" />
+                -->
+            
+            <a href="index.php">tatll</a> </span></code></h1>
             <p>A free tool to turn <i>long URLs</i> into short links <strong>in seconds</strong>.</p>
         </div>
-<!-- the closing tag for this is at footer top -->
+<div class="container" style="margin-top:30px">
+<!-- will be closed by bottom.php -->
+

@@ -4,11 +4,8 @@
 
 ?> 
 
-<div class="container" style="margin-top:30px">
-<!-- will be closed by bottom.php -->
-
 <?php
-    require './core/controllers/welcomeController.php';
+    require './core/controllers/homepageController.php';
 ?>
 
 <?php

@@ -13,7 +13,7 @@ class LongUrlTest extends TestCase
 
 
     public function testMakesALink() {
-        $testurl = 'https://zumtum.us/' 
+        $testurl = 'https://example.com/' 
         . '/' . (string) random_int(100000, 999999)
         . '/' . (string) random_int(100000, 999999);
         $wA = new WebAddress($testurl);
@@ -29,7 +29,7 @@ class LongUrlTest extends TestCase
         $shorties = []; 
         $testUrl = '';
         while ($i > 0){
-            $testUrl = 'https://zumtum.us/' 
+            $testUrl = 'https://example.com/' 
             . '/' . (string) random_int(100000, 999999)
             . '/' . (string) random_int(100000, 999999);
             $wA = new WebAddress($testUrl);

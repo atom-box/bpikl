@@ -69,35 +69,36 @@ Nothing added here at all. Not even 'RewriteEngine on'
 __/etc/apache2/sites-enabled/tatll.org.conf__  
 Note: Must set up reference map outside of the directory block. Okay to say 'rewriterule' inside of block though! 
 ```
+  GNU nano 4.8                                                                       /etc/apache2/sites-available/tatll.org.conf                                                                                  
  1 <VirtualHost *:80>
  2     ServerName tatll.org
  3     ServerAlias www.tatll.org
  4     ServerAdmin webmaster@localhost
  5     DocumentRoot /var/www/tatll.org
- 6     ErrorLog ${APACHE_LOG_DIR}/error.log
- 7     CustomLog ${APACHE_LOG_DIR}/access.log combined
- 8     RewriteEngine on
- 9     RewriteMap pickleFlat txt:15 
-16         # For all requests where files and folders do not exist
-17         RewriteCond %{REQUEST_FILENAME} !-d
-18         RewriteCond %{REQUEST_FILENAME} !-f
-19         RewriteRule . templates/404.php [L]
-/var/www/tatll.org/utilities/pickleFlat.txt
-10
-11     <Directory /var/www/tatll.org>
-12         Options Indexes FollowSymLinks
-13         AllowOverride All
-14         Require all granted
-15         RewriteRule (\w{6}\d{2})$ ${pickleFlat:$1}
-15 
-16         # For all requests where files and folders do not exist
-17         RewriteCond %{REQUEST_FILENAME} !-d
-18         RewriteCond %{REQUEST_FILENAME} !-f
-19         RewriteRule . templates/404.php [L]
+ 6     # LogLevel: Control the severity of messages logged to the error_log.
+ 7     # Available values: trace8, ..., trace1, debug, info, notice, warn,
+ 8     LogLevel trace6
+ 9
+10     ErrorLog ${APACHE_LOG_DIR}/error.log
+11     CustomLog ${APACHE_LOG_DIR}/access.log combined
+12     RewriteEngine on
+13     RewriteMap pickleFlat txt:/home/evan/projects/do-not-commit/shortener.txt
+14     <Directory /var/www/tatll.org>
+15         Options Indexes FollowSymLinks
+16         AllowOverride All
+17         Require all granted
+18         RewriteRule \/?(\w{6}\d{2})$ ${pickleFlat:$1} [L]
+19         # note the slash is a literal char
+20         # note the [L] is required
+21
+22         # For all requests where files and folders do not exist
+23         RewriteCond %{REQUEST_FILENAME} !-d
+24         RewriteCond %{REQUEST_FILENAME} !-f
+25         RewriteRule . templates/404.php [L]
+26     </Directory>
+27 </VirtualHost>
+28
 
-16     </Directory>
-17 </VirtualHost>
-18
 ```
 
 __/var/www/tatll.org/utilities/pickleFlat.txt__
@@ -139,6 +140,7 @@ or
 [x] Make second page   
 [x] ~~Configure apache to use a SQL table to do redirect~~    
 [x] Configure apache to use a rewrite table TEXTFILE to do redirect     
+[ ] fix function notUnique with hard coding at shortUrlToCheck 
 [ ] Make a wrapper class around the dbTransaction for get/set the sql
 [ ] Make newlines append to the flat file used by Apache redirect
 [ ] re-Enable --->public function notUnique()
@@ -171,7 +173,8 @@ or
 [ ] David Powers 11-6,    
 [ ] rightclick format document on everything or run phpcs at     BASh     
 [ ] refactor require/use/namespace everywhere, especially in     tests.  If desperate can try to use global namespace option     onn some things per https://blog.eduonix.com/    web-programming-tutorials/namespaces-in-php/      
-[ ] could add a number of times clicked    
+[ ] could add a number of times clicked   
+[ ] <p class="card-text">Your link is by default public but can also be saved to your private account. After shortening the URL, check how many clicks it received.</p> 
    
 
 

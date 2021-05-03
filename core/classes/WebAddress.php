@@ -11,7 +11,7 @@ interface stringulator  // todo interface not needed on small app
 
 class WebAddress implements stringulator
 {
-    private const SHORTSTUB = 'https://zumtum.us/';
+    private const SHORTSTUB = ''; // adds to front of flatfile redirect
 
     public $short;
     public $long;
@@ -33,7 +33,7 @@ class WebAddress implements stringulator
         try {
             $db = new PDO('mysql:host=' . $host . ';dbname=' . $database, $user, $password);
             // todo  This is for debugging
-            $shortUrlToCheck = 'https://zumtum.us/raqqew88'; 
+            $shortUrlToCheck = 'https://todotodotodo.com/raqqew88'; 
             $queryResult = $db->query("select short from links where short = '" . $shortUrlToCheck . "'");
         } catch (PDOException $e) {
             print "Whoa, error!: " . $e->getMessage() . "<br/>";
