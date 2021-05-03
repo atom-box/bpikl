@@ -141,8 +141,8 @@ or
 [x] ~~Configure apache to use a SQL table to do redirect~~    
 [x] Configure apache to use a rewrite table TEXTFILE to do redirect     
 [ ] fix function notUnique with hard coding at shortUrlToCheck 
-[ ] Make a wrapper class around the dbTransaction for get/set the sql
-[ ] Make newlines append to the flat file used by Apache redirect
+[x] ~~Make a wrapper class around the dbTransaction for get/set the sql~~    
+[x] Make newlines append to the flat file used by Apache redirect
 [ ] re-Enable --->public function notUnique()
 [ ] use bootstrap on the validation  
 [ ] leverage composer libraries  (for sanitizing??)    

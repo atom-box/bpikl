@@ -1,6 +1,7 @@
 <?php
 
 require_once 'core/config/dbconfig.inc.php';
+require_once 'core/config/linksFlatFileConfig.php';
 
 $user = USER;
 $password = SECRET;
@@ -23,17 +24,17 @@ try {
   foreach($descending as $row) {
     echo '<div class="card border-primary mb-4" style="max-width: 55rem;">
     <div class="card-body">
-        <h4 class="card-title">
-            <code>
-                timestamp ' . $row["date"] . '
-            </code>
-            <p class="card-text">
-                TOO LONG [' . $row["longurl"] . '] 
-            </p>
-            <p class="card-text">
-               BETTER! [' .$row["short"] .  ']
-            </p>
-        </h4>
+        <p class="card-text text-left">
+            Full URL: ' . $row["longurl"] . ' 
+        </p>
+        <p class="card-text text-left">
+            Short URL: ' . CUSTOMER_FACING_STUB . $row["short"] .  '
+        </p>
+        <p class="card-title text-right">
+          <code >
+            timestamp ' . $row["date"] . '
+          </code>
+        </p>
   ';
     echo '</div> </div>';
   }

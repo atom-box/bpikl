@@ -13,6 +13,7 @@ class WebAddress implements stringulator
 {
     private const SHORTSTUB = ''; // adds to front of flatfile redirect
 
+
     public $short;
     public $long;
 
@@ -27,7 +28,7 @@ class WebAddress implements stringulator
         $user = USER;
         $password = SECRET;
         $database = NAMEOFDATABASE;
-        $host = 'localhost';
+        $host = 'localhost'; // localhost, even in production, todo
         $queryResult = [];
         $shortUrlToCheck = '';
         try {
