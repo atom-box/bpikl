@@ -4,6 +4,9 @@
 
 If given a long URL, this app generates a shortened URL, stores it in a table, and becomes a redirecter for the new shortened URL.
 
+## Design of the shortened URL      
+I decided to not make hashes for the URLs.  My shortened URLs have a human readable mix of consonants and vowels to make them easier to remember and say.  The shortened URLs end in a two-digit suffix.  The URL shortener function checks the existing db to avoid a collision with existing shortened URLs.  There are over 500 million urls possible before running out of combinations.
+
 ## Built with
 * PHP
 * Apache
@@ -143,39 +146,37 @@ or
 [ ] fix function notUnique with hard coding at shortUrlToCheck 
 [x] ~~Make a wrapper class around the dbTransaction for get/set the sql~~    
 [x] Make newlines append to the flat file used by Apache redirect
+[x] button on success page should say 'make another'   
+[ ] change menu bar to public always
 [ ] re-Enable --->public function notUnique()
-[ ] use bootstrap on the validation  
-[ ] leverage composer libraries  (for sanitizing??)    
-[ ] Write tests for addLinkToDbTest.php
-
-[ ] button on success page should say 'make another'   
-[ ] Add Validation  
-[ ] Sanitize inputs using 12-1 from d powers book
-[ ] 2nd route works 
-[ ] implement DBM with Apache.  DB writes to .htaccess 
-[ ] change echo, error, to logging.  Get a logger from composer. Add log path to config      
+[ ] use Bootstrap4-css on the validation  
 >  https://getbootstrap.com/docs/5.0/forms/validation/
-
-[ ] break up into classes a bit, views a bit
 [ ] scrape new links for their favicons
-[ ] add UI more like https://free-url-shortener.rb.gy/ but with my twinning JS    
-[ ] accessible 
-[ ] add a lower caser to the final phase 3 part   
-[ ] remove unused USE statements    
+[ ] Sanitize inputs using 12-1 from d powers book
+[ ] David Powers 11-6,    
+[ ] Get to here by Tuesday pm
+[ ] deploy to live at Digital Ocean
+[ ] leverage composer libraries  (for sanitizing??)    
+[ ] convert inputs to lower case
+[ ] Write tests for addLinkToDbTest.php
+[x] implement DBM with Apache.  DB writes to a flat file (text, mod_rewrite) 
+[ ] confirm db, file errors go to logging.  Get a logger from composer. Add log path to config      
 [ ] call logging in core/helpers/addToLinkages.php    
+[ ] make helpers into classes, OOP
+[ ] accessible 
+[ ] remove unused USE statements    
 [ ] Write at least three test cases in the tests/ folder.     Run php bin/phpunit    
 [ ] Add a parser option to put the originals URL in as a     dubdomain.    
-[ ] Composer package to avoid obscenity?    
+[ ] Composer package to avoid obscenity, blacklisted sites?    
 [ ] Lint: todos.  Error printers.  Commented out code.    
 [ ] Add captcha?    
-[ ] Lint: core/helpers/addLinkToDb.php and other helpers,     are hacky    
 [ ] Look over the actual algorithm ideas at https://    stackoverflow.com/questions/742013/    how-do-i-create-a-url-shortener     
-[ ] David Powers 11-6,    
-[ ] rightclick format document on everything or run phpcs at     BASh     
 [ ] refactor require/use/namespace everywhere, especially in     tests.  If desperate can try to use global namespace option     onn some things per https://blog.eduonix.com/    web-programming-tutorials/namespaces-in-php/      
-[ ] could add a number of times clicked   
+[ ] add a number of times clicked   
+[ ] add private account   
 [ ] <p class="card-text">Your link is by default public but can also be saved to your private account. After shortening the URL, check how many clicks it received.</p> 
    
+[ ] rightclick format document on everything or run phpcs at     BASh     
 
 
 ## Resources
