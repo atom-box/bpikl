@@ -29,14 +29,10 @@
     <div id="container-fluid wrap">
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link" href="index.php">
-                    User:
-                    <?php $user = 'Guest'; echo "mr. " . $user . " junior"; ?> 
-                </a>
-            </li>
-            <li class="nav-item">
             <span class="nav-link">
-                Links:
+            <a href="allLinks.php">
+                Show all links 
+            </a>
             </span>    
             </li>
         </ul>

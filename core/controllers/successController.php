@@ -1,4 +1,4 @@
 <?php
-require_once
+require
  './core/helpers/addLinkToDb.php';
-require_once './core/helpers/getLinkCards.php';
+require './core/helpers/getLinkCards.php';
