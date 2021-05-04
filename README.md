@@ -109,7 +109,14 @@ __/var/www/tatll.org/utilities/pickleFlat.txt__
 abcdef12 https://example.com
 ```
 
-
+## Deploy sync
+__Files to ignore__    
+.gitignore    
+phpunit*    
+__Folders to ignore__  
+.git    
+vendor    
+    
 ## todo list
 [x] Write the schema  
 [x] Make the Apache root directory  
@@ -181,4 +188,6 @@ or
 
 ## Resources
 
-[https://www.php.net/manual/en/pdo.prepare.php](PDO examples for calling the db)
+[PDO examples for calling the db]
+(https://www.php.net/manual/en/pdo.prepare.php)
+[frontend validation](https://css-tricks.com/form-validation-part-1-constraint-validation-html/)
