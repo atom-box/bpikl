@@ -160,11 +160,11 @@ or
 g
 [x[]] Sanitize inputs using 12-1 from d powers book
 [x] SQL statement is a prepared statement
-[ ] David Powers 11-6,    
-[ ] scrape new links for their favicons
-[ ] Get to here by Tuesday pm
+[x] David Powers 11-6,    
 [ ] deploy to live at Digital Ocean
-[ ] leverage composer libraries  (for sanitizing??)    
+[ ] Capistrano deploy needs DB and the flat file.  Maybe not the config.
+[ ] scrape new links for their favicons
+[ ] leverage composer libraries  (for malevolant users)    
 [ ] convert inputs to lower case
 [ ] Write tests for addLinkToDbTest.php
 [x] implement DBM with Apache.  DB writes to a flat file (text, mod_rewrite) 
