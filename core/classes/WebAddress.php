@@ -25,26 +25,14 @@ class WebAddress
         $queryResult = [];
         try {
             $db = new PDO('mysql:host=' . $host . ';dbname=' . $database, $user, $password);
-            // todo  This is for debugging
-            // should pass
-            // $queryResult = $db->query("select short from links where short = '" . $this->short . "'")->fetchAll(PDO::FETCH_ASSOC);
-            // $lengthRetrieved = count($queryResult);
-            // echo("Found this many, sonny ->>> " . $lengthRetrieved . PHP_EOL);
-            // die;
-            
-            // should fail
-            $queryResult = $db->query("select short from links where short = 'wojwef70'")->fetchAll(PDO::FETCH_ASSOC);
-            $lengthRetrieved = count($queryResult);
-            echo("Found this many, sonny ->>> " . $lengthRetrieved . PHP_EOL);
-            die;
-            
-
+            $queryResult = $db->query("select short from links where short = '" . $this->short . "'")->fetchAll(PDO::FETCH_ASSOC);
+            $numberOfLinksFoundInDB = count($queryResult);
         } catch (PDOException $e) {
             print "Whoa, error!: " . $e->getMessage() . "<br/>";
             //todo this belongs as a log message
         }
 
-        $urlExists = (bool)$queryResult;
+        $urlExists = (bool)$numberOfLinksFoundInDB;
 
         return $urlExists; 
     }

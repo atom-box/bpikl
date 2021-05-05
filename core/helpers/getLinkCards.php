@@ -30,7 +30,7 @@ try {
             <span class="text-warning">Full URL: </span> ' . $cleanLong . ' 
         </p>
         <p class="card-text text-left">
-            Short URL: ' . CUSTOMER_FACING_STUB . $cleanShort .  '
+            <span class="text-warning">Short URL: </span> ' . CUSTOMER_FACING_STUB . $cleanShort .  '
         </p>
         <p class="card-title text-right">
           <code >

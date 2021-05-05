@@ -158,7 +158,7 @@ or
 [x] re-Enable --->public function notUnique(); make sure unit test still works
 [x] use frontend validation    
 g
-[ ] Sanitize inputs using 12-1 from d powers book
+[x[]] Sanitize inputs using 12-1 from d powers book
 [x] SQL statement is a prepared statement
 [ ] David Powers 11-6,    
 [ ] scrape new links for their favicons
@@ -192,3 +192,4 @@ g
 [PDO examples for calling the db]
 (https://www.php.net/manual/en/pdo.prepare.php)
 [frontend validation](https://css-tricks.com/form-validation-part-1-constraint-validation-html/)
+[backend untainting](https://phpdelusions.net/sql_injection)
