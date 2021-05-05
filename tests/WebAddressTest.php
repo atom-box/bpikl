@@ -19,7 +19,7 @@ class LongUrlTest extends TestCase
         $wA = new WebAddress($testurl);
         $this->assertIsString($wA->getLong());
         $wA->shortify();
-        $this->assertLessThan(25, strlen($wA->getShort()));
+        $this->assertEquals(8, strlen($wA->getShort()));
     }
 
     public function testForLinkCollisions(){

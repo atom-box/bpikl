@@ -22,13 +22,15 @@ try {
   // var_dump($ascending); die;
   $descending = array_reverse($ascending);
   foreach($descending as $row) {
+    $cleanLong = htmlspecialchars($row["longurl"]);
+    $cleanShort = htmlspecialchars($row["short"]);
     echo '<div class="card border-primary mb-4" style="max-width: 55rem;">
     <div class="card-body">
         <p class="card-text text-left">
-            Full URL: ' . $row["longurl"] . ' 
+            <span class="text-warning">Full URL: </span> ' . $cleanLong . ' 
         </p>
         <p class="card-text text-left">
-            Short URL: ' . CUSTOMER_FACING_STUB . $row["short"] .  '
+            Short URL: ' . CUSTOMER_FACING_STUB . $cleanShort .  '
         </p>
         <p class="card-title text-right">
           <code >

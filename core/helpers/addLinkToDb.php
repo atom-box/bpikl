@@ -25,8 +25,6 @@ $short      = $address->getShort();
 $handle = new Writer(APACHE_FLATFILE);
 $line = $short . ' ' . $longurl . PHP_EOL;
 $fileWriteSuccess = $handle->appendLine($line);
-// echo $line . ' ===> ' . $fileWriteSuccess . PHP_EOL; die;
-// todo if false is returned, handle it
 
 // QUERY 1: sessions table
 $transaction = new DBTransaction();
@@ -60,10 +58,3 @@ $linkValues =
 $link_id = $transaction->insertQuery($linkQuery, $linkValues);
 $transaction->startTransaction();
 $result = $transaction->submitTransaction();
-
-//   all good?   ENABLE A LOGGER to consume THIS MESSAGE
-//   if ($result) {
-//     echo "Records successfully submitted";
-//   } else {
-//     echo "There was an error.";
-// }

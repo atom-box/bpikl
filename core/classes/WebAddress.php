@@ -2,14 +2,7 @@
 
 require_once 'core/config/dbconfig.inc.php';
 
-
-interface stringulator  // todo interface not needed on small app
-{
-    public function shortify(): void;
-}
-
-
-class WebAddress implements stringulator
+class WebAddress
 {
     private const SHORTSTUB = ''; // adds to front of flatfile redirect
 
@@ -28,21 +21,32 @@ class WebAddress implements stringulator
         $user = USER;
         $password = SECRET;
         $database = NAMEOFDATABASE;
-        $host = 'localhost'; // localhost, even in production, todo
+        $host = '127.0.0.1'; // localhost, even in production, todo - confirm once deployed
         $queryResult = [];
-        $shortUrlToCheck = '';
         try {
             $db = new PDO('mysql:host=' . $host . ';dbname=' . $database, $user, $password);
             // todo  This is for debugging
-            $shortUrlToCheck = 'https://todotodotodo.com/raqqew88'; 
-            $queryResult = $db->query("select short from links where short = '" . $shortUrlToCheck . "'");
+            // should pass
+            // $queryResult = $db->query("select short from links where short = '" . $this->short . "'")->fetchAll(PDO::FETCH_ASSOC);
+            // $lengthRetrieved = count($queryResult);
+            // echo("Found this many, sonny ->>> " . $lengthRetrieved . PHP_EOL);
+            // die;
+            
+            // should fail
+            $queryResult = $db->query("select short from links where short = 'wojwef70'")->fetchAll(PDO::FETCH_ASSOC);
+            $lengthRetrieved = count($queryResult);
+            echo("Found this many, sonny ->>> " . $lengthRetrieved . PHP_EOL);
+            die;
+            
+
         } catch (PDOException $e) {
             print "Whoa, error!: " . $e->getMessage() . "<br/>";
+            //todo this belongs as a log message
         }
 
         $urlExists = (bool)$queryResult;
 
-        return false; // todo todo no matter what right now
+        return $urlExists; 
     }
 
     public function shortify(): void

@@ -154,13 +154,14 @@ or
 [x] ~~Make a wrapper class around the dbTransaction for get/set the sql~~    
 [x] Make newlines append to the flat file used by Apache redirect
 [x] button on success page should say 'make another'   
-[ ] change menu bar to public always
-[ ] re-Enable --->public function notUnique()
-[ ] use Bootstrap4-css on the validation  
->  https://getbootstrap.com/docs/5.0/forms/validation/
-[ ] scrape new links for their favicons
+[x] change menu bar to public always
+[x] re-Enable --->public function notUnique(); make sure unit test still works
+[x] use frontend validation    
+g
 [ ] Sanitize inputs using 12-1 from d powers book
+[x] SQL statement is a prepared statement
 [ ] David Powers 11-6,    
+[ ] scrape new links for their favicons
 [ ] Get to here by Tuesday pm
 [ ] deploy to live at Digital Ocean
 [ ] leverage composer libraries  (for sanitizing??)    
