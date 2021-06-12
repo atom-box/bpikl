@@ -1,6 +1,6 @@
 <?php
 
-require_once 'core/config/dbconfig.inc.php';
+require_once 'core/config/dbConfig.inc.php';
 
 class WebAddress
 {

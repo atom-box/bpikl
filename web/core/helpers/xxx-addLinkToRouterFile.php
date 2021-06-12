@@ -7,9 +7,9 @@
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
 
-// require_once ('./core/helpers/dbTransaction.php');
+// require_once ('./core/helpers/DBTransaction.php');
 require_once('./core/classes/WebAddress.php');  
-require_once('./core/config/dbconfig.inc.php');
+require_once('./core/config/dbConfig.inc.php');
 
 
 /*

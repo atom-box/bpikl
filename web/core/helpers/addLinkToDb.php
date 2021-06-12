@@ -3,7 +3,7 @@
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
 
-require_once ('./core/helpers/dbTransaction.php');
+require_once ('./core/helpers/DBTransaction.php');
 require_once('./core/config/dbConfig.inc.php');
 require_once('./core/classes/WebAddress.php');
 require_once('./core/classes/Writer.php');
@@ -37,8 +37,8 @@ $sessionValues =
 
 // save the session, THEN ASK THE SQL WHICH SERIAL ID WAS IT?
 // (this works because last_id is the serialized sql column)
-$transaction->insertQuery($sessionQuery, $sessionValues);
-$session_id = $transaction->last_insert_id;
+$session_id = $transaction->insertQuery($sessionQuery, $sessionValues);
+// $session_id = $transaction->last_insert_id;
 if (!$session_id) {
     echo "todo todo todo";
     var_dump($transaction);
