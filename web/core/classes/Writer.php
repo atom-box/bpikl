@@ -2,7 +2,7 @@
 
 
 /*
-Used for adding data to the flat file which in turn is used by the mod_rewrite when Apache2 does the URL redirect
+Appends data to the flat file which in turn later will be used by Apache2's mod_rewrite when Apache2 does the URL redirect
 */
 
 class Writer {

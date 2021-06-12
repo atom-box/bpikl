@@ -2,11 +2,11 @@
 // in browser, show errors if any TODO TODO
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
- 
+
 require_once ('./core/helpers/dbTransaction.php');
 require_once('./core/config/dbconfig.inc.php');
-require_once('./core/classes/WebAddress.php'); 
-require_once('./core/classes/Writer.php'); 
+require_once('./core/classes/WebAddress.php');
+require_once('./core/classes/Writer.php');
 require_once 'core/config/linksFlatFileConfig.php';
 
 /*
@@ -29,7 +29,7 @@ $fileWriteSuccess = $handle->appendLine($line);
 // QUERY 1: sessions table
 $transaction = new DBTransaction();
 $sessionQuery = 'insert into sessions (user_id, date) values (:user_id, :date)';
-$sessionValues = 
+$sessionValues =
 [
     'user_id'     => 999 ,
     'date'        => date('Y-m-d H:i:s', time()),
@@ -47,7 +47,7 @@ if (!$session_id) {
 
 //    QUERY 2: links table
 $linkQuery = "insert into links (session_id, longurl, short) values (:session_id , :longurl , :short  )";
-$linkValues = 
+$linkValues =
 [
     'longurl' =>  $longurl,
     'short' =>  $short,

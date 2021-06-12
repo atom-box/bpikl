@@ -4,8 +4,8 @@
 
 If given a long URL, this app generates a shortened URL, stores it in a table, and becomes a redirecter for the new shortened URL.
 
-## Design of the shortened URL      
-I decided to not make hashes for the URLs.  My shortened URLs have a human readable mix of consonants and vowels to make them easier to remember and say.  The shortened URLs end in a two-digit suffix.  The URL shortener function checks the existing db to avoid a collision with existing shortened URLs.  There are over 500 million urls possible before running out of combinations.
+## Algorithm for URL shortening      
+I decided to not make hashes for the URLs.  The shortened URLs have a human readable mix of consonants and vowels to make them easier to remember and say.  The shortened URLs end in a two-digit suffix.  The URL shortener function checks the existing db to avoid a collision with existing shortened URLs.  There are still over 500 million urls possible before running out of combinations.
 
 ## Built with
 * PHP
@@ -15,7 +15,7 @@ I decided to not make hashes for the URLs.  My shortened URLs have a human reada
 
 ## Schema
 
-Deploy notes for the database (PostgreSQL).  The app uses three tables:  
+Deploy notes for the database (MySQL).  The app uses three tables:  
 
 ### sessions
 ```
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS users (
     last_reset  timestamp,
     name        varchar(60),
     type        varchar(12) DEFAULT 'free',
-    created     timestamp,
+    created     timestamp DEFAULT '2020-01-01 11:11:11',
     password    varchar(32)
 );
 ```
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS links (
     link_id     serial,
     session_id  int,
-    long        varchar(1000) NOT NULL,
+    longurl     varchar(1000) NOT NULL,
     short       varchar(40) UNIQUE
 );
 ```
@@ -62,6 +62,12 @@ CREATE TABLE IF NOT EXISTS links (
 
 
 ## Apache deploy  
+__modules to enable__
+sudo a2enmod rewrite
+sudo a2enmod dbd
+
+__enable site__
+sudo a2ensite tatll.org
 
 __/etc/apache2/apache2.conf__
 ```
@@ -104,10 +110,17 @@ Note: Must set up reference map outside of the directory block. Okay to say 'rew
 
 ```
 
-__/var/www/tatll.org/utilities/pickleFlat.txt__
+
+## Deploy the Apache redirect file 
+
+Path __projects/data/shortener.txt__
+
+Format:
 ```
 abcdef12 https://example.com
 ```
+
+
 
 ## Deploy sync
 __Files to ignore__    
@@ -150,42 +163,49 @@ or
 [x] Make second page   
 [x] ~~Configure apache to use a SQL table to do redirect~~    
 [x] Configure apache to use a rewrite table TEXTFILE to do redirect     
-[ ] fix function notUnique with hard coding at shortUrlToCheck 
+[x] fix function notUnique; currently it is not checking anything     
 [x] ~~Make a wrapper class around the dbTransaction for get/set the sql~~    
-[x] Make newlines append to the flat file used by Apache redirect
+[x] Make newlines append to the flat file used by Apache redirect    
 [x] button on success page should say 'make another'   
-[x] change menu bar to public always
-[x] re-Enable --->public function notUnique(); make sure unit test still works
+[x] change menu bar to public always    
+[x] re-Enable --->public function notUnique(); make sure unit test still works    
 [x] use frontend validation    
 g
-[x[]] Sanitize inputs using 12-1 from d powers book
-[x] SQL statement is a prepared statement
+[x[]] Sanitize inputs using 12-1 from d powers book    
+[x] SQL statement is a prepared statement    
 [x] David Powers 11-6,    
-[ ] deploy to live at Digital Ocean
-[ ] Capistrano deploy needs DB and the flat file.  Maybe not the config.
-[ ] scrape new links for their favicons
-[ ] leverage composer libraries  (for malevolant users)    
-[ ] convert inputs to lower case
-[ ] Write tests for addLinkToDbTest.php
-[x] implement DBM with Apache.  DB writes to a flat file (text, mod_rewrite) 
-[ ] confirm db, file errors go to logging.  Get a logger from composer. Add log path to config      
-[ ] call logging in core/helpers/addToLinkages.php    
-[ ] make helpers into classes, OOP
-[ ] accessible 
-[ ] remove unused USE statements    
-[ ] Write at least three test cases in the tests/ folder.     Run php bin/phpunit    
-[ ] Add a parser option to put the originals URL in as a     dubdomain.    
-[ ] Composer package to avoid obscenity, blacklisted sites?    
-[ ] Lint: todos.  Error printers.  Commented out code.    
-[ ] Add captcha?    
-[ ] Look over the actual algorithm ideas at https://    stackoverflow.com/questions/742013/    how-do-i-create-a-url-shortener     
-[ ] refactor require/use/namespace everywhere, especially in     tests.  If desperate can try to use global namespace option     onn some things per https://blog.eduonix.com/    web-programming-tutorials/namespaces-in-php/      
-[ ] add a number of times clicked   
-[ ] add private account   
-[ ] <p class="card-text">Your link is by default public but can also be saved to your private account. After shortening the URL, check how many clicks it received.</p> 
+
+## Set up Digital Ocean   
+[x] ssh keys all around: D.O., local, Github    
+[x] ~~Capistrano local install~~    
+[ ] Enable Beyond Compare for syncing to remote    
+[ ] general chores at LAMP setup howto    
+
+## Improvements
+[ ] Capistrano deploy needs DB and the flat file.  Maybe not the config.    
+[ ] scrape new links for their favicons    
+[ ] Too MVP.  It's not very OOP.  Move everything into classes.
+[ ] leverage composer libraries  (for malevolant users)        
+[ ] convert inputs to lower case    
+[ ] Write tests for addLinkToDbTest.php    
+[x] implement DBM with Apache.  DB writes to a flat file (text, mod_rewrite)     
+[ ] confirm db, file errors go to logging.  Get a logger from composer. Add log path to config          
+[ ] call logging in core/helpers/addToLinkages.php        
+[ ] make helpers into classes, OOP    
+[ ] accessible     
+[ ] remove unused USE statements        
+[ ] Write at least three test cases in the tests/ folder.     Run php bin/phpunit        
+[ ] Add a parser option to put the originals URL in as a     dubdomain.        
+[ ] Composer package to avoid obscenity, blacklisted sites?        
+[ ] Lint: todos.  Error printers.  Commented out code.        
+[ ] Add captcha?        
+[ ] Look over the actual algorithm ideas at https://    stackoverflow.com/questions/742013/    how-do-i-create-a-url-shortener         
+[ ] refactor require/use/namespace everywhere, especially in     tests.  If desperate can try to use global namespace option     onn some things per https://blog.eduonix.com/    web-programming-tutorials/namespaces-in-php/          
+[ ] add a number of times clicked       
+[ ] add private account       
+[ ] <p class="card-text">Your link is by default public but can also be saved to your private account. After shortening the URL, check how many clicks it received.</p>     
    
 [ ] rightclick format document on everything or run phpcs at     BASh     
-
 
 ## Resources
 

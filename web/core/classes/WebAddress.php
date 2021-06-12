@@ -34,7 +34,7 @@ class WebAddress
 
         $urlExists = (bool)$numberOfLinksFoundInDB;
 
-        return $urlExists; 
+        return $urlExists;
     }
 
     public function shortify(): void
