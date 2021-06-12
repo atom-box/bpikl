@@ -2,7 +2,7 @@
 // DBTransaction.php
 
 // keep passwords in a separate file; list that file in .gitignore
-require_once('./core/config/dbConfig.inc.php');
+require_once('./core/config/dbconfig.inc.php');
 
 class DBTransaction {
     protected $pdo;
