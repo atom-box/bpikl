@@ -164,7 +164,7 @@ or
 [x] ~~Configure apache to use a SQL table to do redirect~~    
 [x] Configure apache to use a rewrite table TEXTFILE to do redirect     
 [x] fix function notUnique; currently it is not checking anything     
-[x] ~~Make a wrapper class around the dbTransaction for get/set the sql~~    
+[x] ~~Make a wrapper class around the DBTransaction for get/set the sql~~    
 [x] Make newlines append to the flat file used by Apache redirect    
 [x] button on success page should say 'make another'   
 [x] change menu bar to public always    
@@ -174,7 +174,15 @@ g
 [x[]] Sanitize inputs using 12-1 from d powers book    
 [x] SQL statement is a prepared statement    
 [x] David Powers 11-6,    
-
+[x] Change tatll to PIKL in files
+[o] CANNOT DUPLICATE BUG ~~Reload of success page should not trigger new link making.~~
+[ ] ssh over the whole site
+[ ] move it
+[ ] run composer
+[ ] bring config.  
+[ ] Check location of the flat file.
+[ ] Check the SQL
+[ ] Uh, littlefurnace both work but the www.littlefurnace both 404
 ## Set up Digital Ocean   
 [x] ssh keys all around: D.O., local, Github    
 [x] ~~Capistrano local install~~    
@@ -182,7 +190,7 @@ g
 [ ] general chores at LAMP setup howto    
 
 ## Improvements
-[ ] Capistrano deploy needs DB and the flat file.  Maybe not the config.    
+[x] Capistrano deploy needs DB and the flat file.  Maybe not the config.    
 [ ] scrape new links for their favicons    
 [ ] Too MVP.  It's not very OOP.  Move everything into classes.
 [ ] leverage composer libraries  (for malevolant users)        

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="icon" href="./public/favicon.ico" >
     <title>
-        TA+LL
+        pikL
     </title>
     <style>
         html,
@@ -30,7 +30,7 @@
         <ul class="nav justify-content-end">
             <li class="nav-item">
             <span class="nav-link">
-            <a href="allLinks.php">
+            <a href="linksPage.php">
                 Show all links 
             </a>
             </span>    
@@ -43,7 +43,7 @@
                     <img src="public/images/tatll-flow-picker.svg" style="height: 10rem;" />
                 -->
             
-            <a href="index.php">tatll</a> </span></code></h1>
+            <a href="index.php">pikL</a> </span></code></h1>
             <p>A free tool to turn <i>long URLs</i> into short links <strong>in seconds</strong>.</p>
         </div>
 <div class="container" style="margin-top:30px">
