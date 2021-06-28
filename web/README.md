@@ -176,11 +176,12 @@ g
 [x] David Powers 11-6,    
 [x] Change tatll to PIKL in files
 [o] CANNOT DUPLICATE BUG ~~Reload of success page should not trigger new link making.~~
-[ ] ssh over the whole site
-[ ] move it
-[ ] run composer
-[ ] bring config.  
+[x] ssh over the whole site
 [ ] Check location of the flat file.
+[ ] set up Localhost for flatfile to redirect
+[ ] Apache 404 config oneliner. Prolly look in notes. Or default config grep it.
+[x] run composer
+[ ] bring config.  
 [ ] Check the SQL
 [ ] Uh, littlefurnace both work but the www.littlefurnace both 404
 ## Set up Digital Ocean   

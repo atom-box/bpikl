@@ -17,6 +17,7 @@ if (isset($_POST['longurl'])) {
     require './templates/successCard.php';
 }
 
+
 require './core/helpers/getLinkCards.php';
 require './templates/bottom.php';
 ?>

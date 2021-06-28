@@ -12,7 +12,10 @@ require_once 'core/config/linksFlatFileConfig.php';
 /*
 Adds new url info to two places: DB and FLATFILE-for-Apache
 */
+
+// Sanitize angle brackets and other scary chars 
 $untaintedInput = htmlentities($_POST['longurl']);
+
 $address = new WebAddress($untaintedInput);
 $longurl    = $address->getLong();
 do {
