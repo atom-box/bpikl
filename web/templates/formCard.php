@@ -2,6 +2,7 @@
 <!-- TODO make a proper script, not here-->
 <script>
     console.log('hi ho bobby...');
+// todo todo
 //     const longURL = document.getElementById("long");
 
 // longURL.addEventListener("input", function (event) {
@@ -12,6 +13,18 @@
 //   }
 // });
 
+const validateForm = function(){
+    const unverifiedURL = document.forms["urlEnterer"]["longurl"].value;
+    const reggie = /.*mega.*|.*porson.*|.*delight.*/;
+    let isUnwelcome = reggie.test(unverifiedURL);
+    if(isUnwelcome){
+        console.log("NG: " + Date());
+        return false;
+    }
+    console.log("luvvit" + Date());
+    return true;
+}
+
 
 </script>
 
@@ -19,7 +32,7 @@
 <div class="card border-primary mb-4" style="max-width: 55rem;">
     <div class="card-body">
         <p class="card-text">
-        <form class="form-inline" method="post" action="linksPage.php">
+        <form class="form-inline" name="urlEnterer" method="post" action="linksPage.php" onsubmit="return validateForm()" >
             <div class="form-group">
             <label >Try it now: </label>
                 <input type="url" name="longurl" required 
