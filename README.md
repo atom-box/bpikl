@@ -1,11 +1,8 @@
-# TATLL is a URL shortener
+# PIKL is a URL shortener
 
 ## Introduction
 
 If given a long URL, this app generates a shortened URL, stores it in a table, and becomes a redirecter for the new shortened URL.
-
-## Algorithm for URL shortening      
-I decided to not make hashes for the URLs.  The shortened URLs have a human readable mix of consonants and vowels to make them easier to remember and say.  The shortened URLs end in a two-digit suffix.  The URL shortener function checks the existing db to avoid a collision with existing shortened URLs.  There are still over 500 million urls possible before running out of combinations.
 
 ## Built with
 * PHP
@@ -15,8 +12,10 @@ I decided to not make hashes for the URLs.  The shortened URLs have a human read
 
 For more info about my thought processes scroll down to the project checklist.   
 
+## Algorithm for URL shortening      
+I decided to not make hashes for the URLs.  The shortened URLs have a human readable mix of consonants and vowels to make them easier to remember and say.  The shortened URLs end in a two-digit suffix.  The URL shortener function checks the existing db to avoid a collision with existing shortened URLs.  There are still over 500 million urls possible before running out of combinations.
 
-## Schema
+## SQL db Schema
 
 Deploy notes for the database (MySQL).  The app uses three tables:  
 
@@ -51,87 +50,7 @@ CREATE TABLE IF NOT EXISTS links (
     short       varchar(40) UNIQUE
 );
 ```
-[done]: https://user-images.githubusercontent.com/29199184/32275438-8385f5c0-bf0b-11e7-9406-42265f71e2bd.png "Done"
 
-|               Section              | 1<br>Basics | 2<br>Works   | 3<br>Polished     | 4<br>Linted |
-|:-------------------------------- |:-----------------:|:-------------:|:-------------:|:----------------:|
-|**three pages of html**    |   ![done][done]     |  |   |
-|**schema**           |  ![done][done]        |   ![done][done]   |  |                                  |
-|**SQL**           |   ![done][done]      |  ![done][done]  |  |                                  |
-|**tests**    |   ![done][done]    |  |   |                        |
-|**write shortener logic (5 - 9 alphanumeric)**   |    ![done][done]    |    ![done][done]             |               |                                  |
-|**Session management**         |                   |               |               |                                  |
-|**CSS**         |![done][done]   |               |               |                                  |
-
-
-## Apache deploy  
-__modules to enable__
-sudo a2enmod rewrite
-sudo a2enmod dbd
-
-__enable site__
-sudo a2ensite tatll.org
-
-__/etc/apache2/apache2.conf__
-```
-#...
-Nothing added here at all. Not even 'RewriteEngine on'
-```
-
-__/etc/apache2/sites-enabled/tatll.org.conf__  
-Note: Must set up reference map outside of the directory block. Okay to say 'rewriterule' inside of block though! 
-```
-  GNU nano 4.8                                                                       /etc/apache2/sites-available/tatll.org.conf                                                                                  
- 1 <VirtualHost *:80>
- 2     ServerName tatll.org
- 3     ServerAlias www.tatll.org
- 4     ServerAdmin webmaster@localhost
- 5     DocumentRoot /var/www/tatll.org
- 6     # LogLevel: Control the severity of messages logged to the error_log.
- 7     # Available values: trace8, ..., trace1, debug, info, notice, warn,
- 8     LogLevel trace6
- 9
-10     ErrorLog ${APACHE_LOG_DIR}/error.log
-11     CustomLog ${APACHE_LOG_DIR}/access.log combined
-12     RewriteEngine on
-13     RewriteMap pickleFlat txt:/home/evan/projects/do-not-commit/shortener.txt
-14     <Directory /var/www/tatll.org>
-15         Options Indexes FollowSymLinks
-16         AllowOverride All
-17         Require all granted
-18         RewriteRule \/?(\w{6}\d{2})$ ${pickleFlat:$1} [L]
-19         # note the slash is a literal char
-20         # note the [L] is required
-21
-22         # For all requests where files and folders do not exist
-23         RewriteCond %{REQUEST_FILENAME} !-d
-24         RewriteCond %{REQUEST_FILENAME} !-f
-25         RewriteRule . templates/404.php [L]
-26     </Directory>
-27 </VirtualHost>
-28
-
-```
-
-
-## Deploy the Apache redirect file 
-
-Path __projects/data/shortener.txt__
-
-Format:
-```
-abcdef12 https://example.com
-```
-
-
-
-## Deploy sync
-__Files to ignore__    
-.gitignore    
-phpunit*    
-__Folders to ignore__  
-.git    
-vendor    
   
 ## Next action:
 
@@ -223,6 +142,77 @@ g
 [ ] <p class="card-text">Your link is by default public but can also be saved to your private account. After shortening the URL, check how many clicks it received.</p>     
    
 [ ] rightclick format document on everything or run phpcs at     BASh     
+
+## Apache deploy instructions  
+__modules to enable__
+sudo a2enmod rewrite
+sudo a2enmod dbd
+
+__enable site__
+sudo a2ensite tatll.org
+
+__/etc/apache2/apache2.conf__
+```
+#...
+Nothing added here at all. Not even 'RewriteEngine on'
+```
+
+__/etc/apache2/sites-enabled/tatll.org.conf__  
+Note: Must set up reference map outside of the directory block. Okay to say 'rewriterule' inside of block though! 
+```
+  GNU nano 4.8                                                                       /etc/apache2/sites-available/tatll.org.conf                                                                                  
+ 1 <VirtualHost *:80>
+ 2     ServerName tatll.org
+ 3     ServerAlias www.tatll.org
+ 4     ServerAdmin webmaster@localhost
+ 5     DocumentRoot /var/www/tatll.org
+ 6     # LogLevel: Control the severity of messages logged to the error_log.
+ 7     # Available values: trace8, ..., trace1, debug, info, notice, warn,
+ 8     LogLevel trace6
+ 9
+10     ErrorLog ${APACHE_LOG_DIR}/error.log
+11     CustomLog ${APACHE_LOG_DIR}/access.log combined
+12     RewriteEngine on
+13     RewriteMap pickleFlat txt:/home/evan/projects/do-not-commit/shortener.txt
+14     <Directory /var/www/tatll.org>
+15         Options Indexes FollowSymLinks
+16         AllowOverride All
+17         Require all granted
+18         RewriteRule \/?(\w{6}\d{2})$ ${pickleFlat:$1} [L]
+19         # note the slash is a literal char
+20         # note the [L] is required
+21
+22         # For all requests where files and folders do not exist
+23         RewriteCond %{REQUEST_FILENAME} !-d
+24         RewriteCond %{REQUEST_FILENAME} !-f
+25         RewriteRule . templates/404.php [L]
+26     </Directory>
+27 </VirtualHost>
+28
+
+```
+
+
+## Deploy the Apache redirect file 
+
+Path __projects/data/shortener.txt__
+
+Format:
+```
+abcdef12 https://example.com
+```
+
+
+
+## Deploy sync
+__Files to ignore__    
+.gitignore    
+phpunit*    
+__Folders to ignore__  
+.git    
+vendor    
+
+
 
 ## Resources
 
