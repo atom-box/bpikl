@@ -11,7 +11,10 @@ I decided to not make hashes for the URLs.  The shortened URLs have a human read
 * PHP
 * Apache
 * MySQL
-* phpunit
+* phpunit  
+
+For more info about my thought processes scroll down to the project checklist.   
+
 
 ## Schema
 
@@ -129,8 +132,14 @@ phpunit*
 __Folders to ignore__  
 .git    
 vendor    
-    
-## todo list
+  
+## Next action:
+
+[ ] SANITIZER is too aggressive: sophisticated URLs from Amazon no longer redirect well.  Use encode/decode steps, per below:
+html_entity_decode() 	Converts HTML entities to characters
+htmlentities() 	Converts characters to HTML entities
+  
+## Todo list
 [x] Write the schema  
 [x] Make the Apache root directory  
 [x] Config file in dev and prod and .gitignore  
@@ -177,22 +186,26 @@ g
 [x] Change tatll to PIKL in files
 [o] CANNOT DUPLICATE BUG ~~Reload of success page should not trigger new link making.~~
 [x] ssh over the whole site
-[ ] Check location of the flat file.
-[ ] set up Localhost for flatfile to redirect
+[x] Check location of the flat file.
+[x] set up Localhost for flatfile to redirect
 [ ] Apache 404 config oneliner. Prolly look in notes. Or default config grep it.
 [x] run composer
-[ ] bring config.  
-[ ] Check the SQL
-[ ] Uh, littlefurnace both work but the www.littlefurnace both 404
+[x] Check the SQL
 ## Set up Digital Ocean   
 [x] ssh keys all around: D.O., local, Github    
 [x] ~~Capistrano local install~~    
-[ ] Enable Beyond Compare for syncing to remote    
-[ ] general chores at LAMP setup howto    
+[x] Enable Beyond Compare for syncing to remote (ended up  using Git to deploy instead -- too many permissions hassles)   
 
 ## Improvements
-[x] Capistrano deploy needs DB and the flat file.  Maybe not the config.    
-[ ] scrape new links for their favicons    
+[ ] Lint: todos.  Error printers.  Commented out code.        
+[ ] add private account       
+[ ] scrape new links for their favicons. Show site logos next to the long links that way.    
+[ ] look to see if any Composer package exists to avoid obscenity, blacklisted sites?        
+[ ] add a number of times clicked       
+[ ] Look over the actual algorithm ideas at https://    stackoverflow.com/questions/742013/    how-do-i-create-a-url-shortener         
+[x] Capistrano deploy needs DB and the flat file.  Maybe not the config.    ENDED UP using Git.
+[x] Block spam with a Regex for now
+[ ] Spam strategy needs a simple Captcha. By hand?
 [ ] Too MVP.  It's not very OOP.  Move everything into classes.
 [ ] leverage composer libraries  (for malevolant users)        
 [ ] convert inputs to lower case    
@@ -201,17 +214,12 @@ g
 [ ] confirm db, file errors go to logging.  Get a logger from composer. Add log path to config          
 [ ] call logging in core/helpers/addToLinkages.php        
 [ ] make helpers into classes, OOP    
-[ ] accessible     
+[ ] accessibility     
 [ ] remove unused USE statements        
 [ ] Write at least three test cases in the tests/ folder.     Run php bin/phpunit        
 [ ] Add a parser option to put the originals URL in as a     dubdomain.        
-[ ] Composer package to avoid obscenity, blacklisted sites?        
-[ ] Lint: todos.  Error printers.  Commented out code.        
 [ ] Add captcha?        
-[ ] Look over the actual algorithm ideas at https://    stackoverflow.com/questions/742013/    how-do-i-create-a-url-shortener         
 [ ] refactor require/use/namespace everywhere, especially in     tests.  If desperate can try to use global namespace option     onn some things per https://blog.eduonix.com/    web-programming-tutorials/namespaces-in-php/          
-[ ] add a number of times clicked       
-[ ] add private account       
 [ ] <p class="card-text">Your link is by default public but can also be saved to your private account. After shortening the URL, check how many clicks it received.</p>     
    
 [ ] rightclick format document on everything or run phpcs at     BASh     
