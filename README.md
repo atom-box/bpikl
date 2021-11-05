@@ -10,7 +10,10 @@ If given a long URL, this app generates a shortened URL, stores it in a table, a
 * MySQL
 * phpunit  
 
-For more info about my thought processes scroll down to the project checklist.   
+For more info about  
+my thought processes  
+scroll down to the  
+project checklist.   
 
 ## Algorithm for URL shortening      
 I decided to not make hashes for the URLs.  The shortened URLs have a human readable mix of consonants and vowels to make them easier to remember and say.  The shortened URLs end in a two-digit suffix.  The URL shortener function checks the existing db to avoid a collision with existing shortened URLs.  There are still over 500 million urls possible before running out of combinations.
@@ -58,7 +61,7 @@ CREATE TABLE IF NOT EXISTS links (
 html_entity_decode() 	Converts HTML entities to characters
 htmlentities() 	Converts characters to HTML entities
   
-## Todo list
+## Checklist
 [x] Write the schema  
 [x] Make the Apache root directory  
 [x] Config file in dev and prod and .gitignore  
