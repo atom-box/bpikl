@@ -21,6 +21,12 @@
     var u="//littlefurnace.com/matomo/";
     _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', '2']);
+
+    var secondaryTracker = 'https://tatll.matomo.cloud/matomo.php';
+    var secondaryWebsiteId = '6';
+    // Also send all of the tracking data to the new Matomo server
+    _paq.push(['addTracker', secondaryTracker, secondaryWebsiteId]);
+
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
     g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
   })();
