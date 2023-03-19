@@ -17,7 +17,7 @@ const validateForm = function(){
     const unverifiedURL = document.forms["urlEnterer"]["longurl"].value;
     const reggie = /.*mega.*|.*porson.*|.*delight.*/;
     let isUnwelcome = reggie.test(unverifiedURL);
-    let passedHumanTest = "mca" === document.forms["urlEnterer"]["bassist"].value;
+    let passedHumanTest = "Clarence" === document.forms["urlEnterer"]["bassist"].value;
     if(isUnwelcome){
         console.log("NG: " + Date());
         return false;
@@ -39,7 +39,7 @@ const validateForm = function(){
         <p class="card-text">
         <form class="form-inline" name="urlEnterer" method="post" action="linksPage.php" onsubmit="return validateForm()" >
             <div class="form-group">
-            <label >Who played bass in the Beastie Boys: </label>
+            <label >Is your name Michael Diamond?</label>
                 <input type="string" name="bassist" required 
              class="form-control" id="bassist" placeholder="name">
             </div>
