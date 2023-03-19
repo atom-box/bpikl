@@ -20,4 +20,4 @@
 
 </head>
 
-<h1 style="font-size: 44rem; background-color:darkgrey; color: white;">404</h1>
+<h1 style="font-size: 44rem; background-color:darkgrey; color: orange;">404</h1>
