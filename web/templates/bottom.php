@@ -1,10 +1,8 @@
 <!-- the opening tag for this is at  top -->
 </div>
-        <footer class="footer text-center" style="margin-bottom:0">
-            <i class="icon-bullhorn"></i> <i class="icon-comment-alt"></i>     
-            <p><i class="icon-bullhorn mouseoverbull" id="22"></i>     Made by Evan at <a href="https://www.littlefurnace.com" title="Visit Little Furnace">Little Furnace</a><i class="icon-comment-alt mouseovercomment" id="33"></i></p>
+        <footer class="footer text-center" style="margin-bottom:0"> 
+            <p><span class="aaa" id="222">Made by</span> <span class="bbb" id="333" >Evan at </span> <a href="https://www.littlefurnace.com" title="Visit Little Furnace">Little Furnace</a><i class="icon-comment-alt mouseovercomment" id="33"></i></p>
         </footer>
-
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
