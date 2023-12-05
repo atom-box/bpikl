@@ -17,7 +17,7 @@ const validateForm = function(){
     const unverifiedURL = document.forms["urlEnterer"]["longurl"].value;
     const reggie = /.*mega.*|.*porson.*|.*delight.*/;
     let isUnwelcome = reggie.test(unverifiedURL);
-    let passedHumanTest = "Clarence" === document.forms["urlEnterer"]["bassist"].value;
+    let passedHumanTest = "nomynames" === document.forms["urlEnterer"]["bassist"].value;
     if(isUnwelcome){
         console.log("NG: " + Date());
         return false;

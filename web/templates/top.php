@@ -60,6 +60,10 @@ g.async=true; g.src='https://littlefurnace.com/matomo/js/container_b18KuBVf.js';
     
 </head>
 <body>
+  <!-- Matomo Image Tracker for PIKL-->
+  <img src="https://littlefurnace.com/matomo/matomo.php?idsite=8&amp;rec=1" style="border:0" alt="" />
+  <!-- End Matomo -->
+
     <div id="container-fluid wrap">
         <ul class="nav justify-content-end">
             <li class="nav-item">
