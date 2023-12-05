@@ -2,7 +2,7 @@
 </div>
         <footer class="footer text-center" style="margin-bottom:0">
             <i class="icon-bullhorn"></i> <i class="icon-comment-alt"></i>     
-            <p><i class="icon-bullhorn"></i>     Made by Evan at <a href="https://www.littlefurnace.com" title="Visit Little Furnace">Little Furnace</a><i class="icon-comment-alt"></i></p>
+            <p><i class="icon-bullhorn mouseoverbull" id="22"></i>     Made by Evan at <a href="https://www.littlefurnace.com" title="Visit Little Furnace">Little Furnace</a><i class="icon-comment-alt mouseovercomment" id="33"></i></p>
         </footer>
 
     </div>
