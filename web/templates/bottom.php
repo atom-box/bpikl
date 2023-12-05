@@ -1,7 +1,8 @@
 <!-- the opening tag for this is at  top -->
 </div>
         <footer class="footer text-center" style="margin-bottom:0">
-            <p> Made by Evan at <a href="https://www.littlefurnace.com" title="Visit Little Furnace">Little Furnace</a></p>
+            <i class="icon-bullhorn"></i> <i class="icon-comment-alt"></i>     
+            <p><i class="icon-bullhorn"></i>     Made by Evan at <a href="https://www.littlefurnace.com" title="Visit Little Furnace">Little Furnace</a><i class="icon-comment-alt"></i></p>
         </footer>
 
     </div>
